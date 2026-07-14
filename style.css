@@ -16,8 +16,7 @@ h3 {
 }
 
 .ticker-text,
-button,
-header button {
+button {
     font-family: 'Fira Code', monospace;
 }
 
@@ -43,6 +42,7 @@ header {
 }
 
 .header-container {
+    font-family: 'Fira Code', monospace;
     display: flex;
     align-items: center;
     gap: 24px;
@@ -63,6 +63,41 @@ header button {
     cursor: pointer;
     font-size: 16px;
     font-weight: 500;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.logo-monogram {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 0.8; 
+    color: var(--color-accent-green);
+}
+
+.logo-monogram .letter-k {
+    display: inline-block;
+    transform: rotate(90deg);
+    margin-bottom: -5px;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.logo-text span {
+    color: var(--color-text-white);
 }
 
 footer {

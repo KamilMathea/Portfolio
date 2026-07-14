@@ -1,5 +1,14 @@
 body {
+    font-family: 'Karla', sans-serif;
     color: rgba(255, 255, 255, 1);
+}
+
+h1, h2, h3 {
+    font-family: 'Fira Code', monospace;
+}
+
+.ticker-text, button, header button {
+    font-family: 'Fira Code', monospace;
 }
 
 section {

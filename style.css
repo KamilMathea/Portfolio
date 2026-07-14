@@ -109,6 +109,7 @@ footer {
     background: var(--gradient-hero);
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .hero-container .content-wrapper {
@@ -148,6 +149,128 @@ footer {
     padding: 12px 24px;
     text-decoration: none;
     transition: all 0.3s ease;
+}
+
+.hero-lines-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 1440px;
+    padding: 0 5%;
+    pointer-events: none;
+}
+
+.left-line-group,
+.right-line-group {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: auto;
+}
+
+.left-line-group {
+    left: 5%;
+}
+
+.right-line-group {
+    right: 5%;
+}
+
+.green-hero-separator,
+.white-hero-separator {
+    width: 1px;
+    height: 20dvh;
+}
+
+.green-hero-separator {
+    background-color: var(--color-accent-green);
+}
+
+.white-hero-separator {
+    background-color: var(--color-text-white);
+}
+
+.arrow-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 48px;
+    border: 1px solid var(--color-accent-green);
+    border-radius: 24px;
+    margin-bottom: 24px;
+}
+
+.arrow-container img {
+    width: 18px;
+    height: 18px;
+}
+
+.contact-social-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.social-icon {
+    display: inline-block;
+    position: relative;
+    width: 32px;
+    height: 32px;
+}
+
+.social-icon img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.social-icon::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('./assets/img/social_media/GitHub.svg') no-repeat center / contain;
+    filter: brightness(0) invert(1);
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.social-icon[href*="linkedin"]::after {
+    background-image: url('./assets/img/social_media/Linkedin.svg');
+}
+
+.social-icon:hover img {
+    opacity: 0;
+}
+
+.social-icon:hover::after {
+    opacity: 1;
+}
+
+.rotated-email {
+    font-family: 'Karla', sans-serif;
+    font-size: 18px;
+    color: var(--color-text-white);
+    text-decoration: none;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    white-space: nowrap;
+    transition: color 0.3s ease;
+}
+
+.rotated-email:hover {
+    color: var(--color-accent-green);
 }
 
 a {

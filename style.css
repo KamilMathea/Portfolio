@@ -11,10 +11,7 @@ body {
 }
 
 h2,
-h3 {
-    font-family: 'Fira Code', monospace;
-}
-
+h3,
 .ticker-text,
 button {
     font-family: 'Fira Code', monospace;
@@ -110,6 +107,7 @@ footer {
     display: flex;
     flex-direction: column;
     position: relative;
+    overflow: hidden;
 }
 
 .hero-container .content-wrapper {
@@ -271,6 +269,31 @@ footer {
 
 .rotated-email:hover {
     color: var(--color-accent-green);
+}
+
+.ticker-text {
+    position: absolute;
+    bottom: 0px;
+    left: -5%;
+    width: 110vw;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(5.3px);
+    -webkit-backdrop-filter: blur(5.3px);
+    padding: 12px 0;
+    font-size: 32px;
+    text-transform: uppercase;
+    color: var(--color-text-white);
+    transform: rotate(-3deg);
+    transform-origin: left bottom;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+.ticker-dot {
+    color: var(--color-accent-green);
+    margin: 0 32px;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 a {

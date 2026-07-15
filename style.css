@@ -285,13 +285,38 @@ footer {
     color: var(--color-text-white);
     transform: rotate(-3deg);
     transform-origin: left bottom;
-    white-space: nowrap;
+    overflow: hidden;
     pointer-events: none;
+}
+
+.ticker-track {
+    display: flex;
+    width: max-content;
+    animation: scroll-ticker 15s linear infinite; 
+}
+
+.ticker-track span {
+    display: inline-block;
+}
+
+.ticker-group {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+@keyframes scroll-ticker {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-33.333%); 
+    }
 }
 
 .ticker-dot {
     color: var(--color-accent-green);
-    margin: 0 32px;
+    margin: 0 64px;
     display: inline-block;
     vertical-align: middle;
 }

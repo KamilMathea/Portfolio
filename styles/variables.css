@@ -1,0 +1,40 @@
+:root {
+    --color-bg-dark: rgba(28, 28, 28, 1);
+    --color-text-white: rgba(255, 255, 255, 1);
+    --color-accent-green: rgba(61, 207, 182, 1);
+    --gradient-hero: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
+}
+
+body {
+    font-family: 'Karla', sans-serif;
+    color: var(--color-text-white);
+}
+
+h2,
+h3,
+.ticker-text,
+button {
+    font-family: 'Fira Code', monospace;
+}
+
+section {
+    background-color: var(--color-bg-dark);
+    min-height: 100vh;
+    width: 100%;
+}
+
+a {
+    color: var(--color-text-white);
+}
+
+span {
+    color: var(--color-accent-green);
+}
+
+h2 {
+    color: var(--color-accent-green);
+}
+
+h3 {
+    color: var(--color-text-white);
+}

@@ -1,0 +1,7 @@
+#skills h3 {
+    color: var(--color-accent-green);
+}
+
+#skills h3 span {
+    color: var(--color-text-white);
+}

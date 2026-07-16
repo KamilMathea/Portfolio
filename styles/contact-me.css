@@ -1,0 +1,27 @@
+#contact .subtitle {
+    color: var(--color-accent-green);
+}
+
+#contact a.btn-secondary {
+    color: var(--color-accent-green);
+}
+
+.form-group label,
+.form-group input,
+.form-group textarea {
+    color: var(--color-accent-green);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--color-text-white);
+    opacity: 1;
+}
+
+.checkbox-group input[type="checkbox"] {
+    accent-color: var(--color-accent-green);
+}
+
+button[type="submit"] {
+    color: var(--color-text-white);
+}

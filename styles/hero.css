@@ -1,107 +1,3 @@
-:root {
-    --color-bg-dark: rgba(28, 28, 28, 1);
-    --color-text-white: rgba(255, 255, 255, 1);
-    --color-accent-green: rgba(61, 207, 182, 1);
-    --gradient-hero: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
-}
-
-body {
-    font-family: 'Karla', sans-serif;
-    color: var(--color-text-white);
-}
-
-h2,
-h3,
-.ticker-text,
-button {
-    font-family: 'Fira Code', monospace;
-}
-
-section {
-    background-color: var(--color-bg-dark);
-    min-height: 100vh;
-    width: 100%;
-}
-
-.content-wrapper,
-header {
-    max-width: 1440px;
-    margin: 0 auto;
-    width: 100%;
-    padding: 0px 5%;
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 24px;
-}
-
-.header-container {
-    font-family: 'Fira Code', monospace;
-    display: flex;
-    align-items: center;
-    gap: 24px;
-}
-
-header ul {
-    display: flex;
-    list-style: none;
-    gap: 24px;
-    padding: 0;
-}
-
-header button {
-    color: var(--color-text-white);
-    background: none;
-    border: 1px solid var(--color-accent-green);
-    border-radius: 100px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: 500;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-}
-
-.logo-monogram {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 32px;
-    font-weight: 700;
-    line-height: 0.8; 
-    color: var(--color-accent-green);
-}
-
-.logo-monogram .letter-k {
-    display: inline-block;
-    transform: rotate(90deg);
-    margin-bottom: -5px;
-}
-
-.logo-text {
-    display: flex;
-    flex-direction: column;
-    font-size: 20px;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-}
-
-.logo-text span {
-    color: var(--color-text-white);
-}
-
-footer {
-    background-color: var(--color-bg-dark);
-    width: 100%;
-}
-
 .hero-container {
     background: var(--gradient-hero);
     display: flex;
@@ -129,6 +25,7 @@ footer {
     order: 1;
     font-size: 40px;
     margin-bottom: 0;
+    color: var(--color-text-white);
 }
 
 .hero-container .hero-buttons {
@@ -248,14 +145,14 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('./assets/img/social_media/GitHub.svg') no-repeat center / contain;
+    background: url('../assets/img/social_media/GitHub.svg') no-repeat center / contain;
     filter: brightness(0) invert(1);
     opacity: 0;
     transition: opacity 0.4s ease-in-out;
 }
 
 .social-icon[href*="linkedin"]::after {
-    background-image: url('./assets/img/social_media/Linkedin.svg');
+    background-image: url('../assets/img/social_media/Linkedin.svg');
 }
 
 .social-icon:hover img {
@@ -292,7 +189,7 @@ footer {
     padding: 12px 0;
     font-size: 32px;
     text-transform: uppercase;
-    color: var(--color-text-white);
+    color: var(--color-accent-green);
     transform: rotate(-3deg);
     transform-origin: left bottom;
     overflow: hidden;
@@ -329,74 +226,4 @@ footer {
     margin: 0 64px;
     display: inline-block;
     vertical-align: middle;
-}
-
-a {
-    color: var(--color-text-white);
-}
-
-.text-green,
-#contact a.btn-secondary {
-    color: var(--color-accent-green);
-}
-
-span {
-    color: var(--color-accent-green);
-}
-
-.next-and-previous-feedback span {
-    color: var(--color-text-white);
-}
-
-h2 {
-    color: var(--color-accent-green);
-}
-
-.hero-container h2 {
-    color: var(--color-text-white);
-}
-
-h3 {
-    color: var(--color-text-white);
-}
-
-#skills h3 {
-    color: var(--color-accent-green);
-}
-
-#skills h3 span {
-    color: var(--color-text-white);
-}
-
-.hero-container .ticker-text,
-#contact .subtitle {
-    color: var(--color-accent-green);
-}
-
-.form-group label,
-.form-group input,
-.form-group textarea {
-    color: var(--color-accent-green);
-}
-
-.form-group input::placeholder,
-.form-group textarea::placeholder {
-    color: var(--color-text-white);
-    opacity: 1;
-}
-
-.checkbox-group input[type="checkbox"] {
-    accent-color: var(--color-accent-green);
-}
-
-button[type="submit"] {
-    color: var(--color-text-white);
-}
-
-footer p {
-    color: var(--color-text-white);
-}
-
-footer div:nth-child(2) p {
-    color: var(--color-accent-green);
 }

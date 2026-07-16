@@ -207,6 +207,16 @@ footer {
 .arrow-container img {
     width: 18px;
     height: 18px;
+    animation: bounce-arrow 2s ease-in-out infinite;
+}
+
+@keyframes bounce-arrow {
+    0%, 100% {
+        transform: translateY(-4px);
+    }
+    50% {
+        transform: translateY(4px);
+    }
 }
 
 .contact-social-group {

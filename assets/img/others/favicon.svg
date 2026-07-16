@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <style>
+    text {
+      font-family: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+      font-size: 26px; /* EXTREM vergrößert für maximale Fläche */
+      font-weight: 900; /* Extra bold */
+      letter-spacing: -2px; /* Nahe zusammengerückt */
+      fill: #ffffff; /* Cursor weiß */
+    }
+    .accent {
+      fill: #00FFCC; /* Prompt grün */
+    }
+  </style>
+  <!-- Fast quadratischer Hintergrund für maximale Fläche -->
+  <rect width="32" height="32" rx="3" fill="#121212" />
+  
+  <!-- Perfekt zentriert und massiv groß -->
+  <text x="50%" y="56%" text-anchor="middle" dominant-baseline="middle">
+    <tspan class="accent">&gt;</tspan>_
+  </text>
+</svg>

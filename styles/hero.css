@@ -34,16 +34,56 @@
     order: 3;
 }
 
-.hero-container .btn-primary,
-.hero-container .btn-secondary {
-    display: inline-block;
+.hero-container .skills-and-contact-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     font-size: 18px;
     color: var(--color-text-white);
     border: 1px solid var(--color-text-white);
     border-radius: 100px;
     padding: 12px 24px;
     text-decoration: none;
-    transition: all 0.3s ease;
+    overflow: hidden; 
+    white-space: nowrap;
+    transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+/* Der Text-Container verhält sich im Normalzustand völlig neutral */
+.hero-container .skills-and-contact-btn p {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+
+/* HOVER-ZUSTAND: Rahmen und Text werden grün */
+.hero-container .skills-and-contact-btn:hover {
+    color: var(--color-accent-green);
+    border-color: var(--color-accent-green);
+}
+
+/* Nur beim Hovern wird die fließende Bewegung gestartet */
+.hero-container .skills-and-contact-btn:hover p {
+    animation: button-text-flow 3.5s linear infinite;
+}
+
+/* DER DURCHGEHENDE FLOW-EFFEKT:
+   Der Text fließt nach links raus, springt unsichtbar nach rechts 
+   und fließt direkt wieder zurück in die Mitte, um sofort von vorn zu starten. */
+@keyframes button-text-flow {
+    0% {
+        transform: translateX(0);
+    }
+    45% {
+        transform: translateX(-150%);
+    }
+    45.001% {
+        transform: translateX(150%);
+    }
+    100% {
+        transform: translateX(0);
+    }
 }
 
 .hero-lines-container {

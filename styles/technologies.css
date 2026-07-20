@@ -1,5 +1,10 @@
 #skills {
     padding: 80px 0;
+    background-image: radial-gradient(circle at 0% 50%, rgba(8, 70, 59, 0.3) 0%, #1C1C1C 100%);
+    background-size: 45% 85%; 
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-color: #1C1C1C;
 }
 
 .technologies-container {

@@ -1,0 +1,185 @@
+#project-dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+}
+
+.project-modal {
+    border: none;
+    padding: 0;
+    background: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
+    border-radius: 30px;
+    max-width: 900px;
+    width: 90%;
+    margin: auto;
+    color: var(--color-text-white);
+    overflow: visible;
+}
+
+.dialog-content {
+    display: flex;
+    gap: 40px;
+    padding: 48px;
+    position: relative;
+}
+
+.dialog-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.dialog-number {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--color-accent-green);
+    font-family: 'Fira Code', monospace;
+}
+
+.dialog-left h2 {
+    font-size: 40px;
+    color: var(--color-text-white);
+    margin: 8px 0 4px 0;
+}
+
+.dialog-subtitle {
+    font-size: 20px;
+    color: var(--color-accent-green);
+    margin-bottom: 16px;
+}
+
+.dialog-left p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--color-text-white);
+    opacity: 0.9;
+    margin-bottom: 24px;
+}
+
+.dialog-tech-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.tech-icon-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.tech-icon-item img {
+    width: 20px;
+    height: 20px;
+}
+
+.dialog-buttons {
+    display: flex;
+    gap: 16px;
+    margin-top: auto;
+}
+
+.modal-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid var(--color-text-white);
+    color: var(--color-text-white);
+    padding: 12px 24px;
+    border-radius: 100px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.modal-btn:hover {
+    color: var(--color-accent-green);
+    border-color: var(--color-accent-green);
+}
+
+.modal-btn::after {
+    content: "";
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background-color: var(--color-text-white);
+    mask-image: url('../assets/img/projects/arrow_outward.svg');
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    transition: background-color 0.3s ease;
+}
+
+.modal-btn:hover::after {
+    background-color: var(--color-accent-green);
+}
+
+.dialog-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+.close-dialog-btn {
+    position: absolute;
+    top: -24px;
+    right: -24px;
+    background: none;
+    border: none;
+    color: var(--color-text-white);
+    font-size: 24px;
+    cursor: pointer;
+    padding: 8px;
+    transition: color 0.2s ease;
+}
+
+.close-dialog-btn:hover {
+    color: var(--color-accent-green);
+}
+
+.dialog-image-wrapper {
+    width: 100%;
+    border-radius: 30px;
+    overflow: hidden;
+    aspect-ratio: 16 / 10;
+}
+
+.dialog-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.next-project-btn {
+    align-self: flex-end;
+    background: none;
+    border: none;
+    color: var(--color-text-white);
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 24px;
+    transition: color 0.2s ease;
+}
+
+.next-project-btn:hover {
+    color: var(--color-accent-green);
+}
+
+.next-project-btn::after {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-color: var(--color-text-white);
+    mask-image: url('../assets/img/others/arrow_forward.svg');
+    mask-size: contain;
+    mask-repeat: no-repeat;
+}
+
+.next-project-btn:hover::after {
+    background-color: var(--color-accent-green);
+}

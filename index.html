@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="./styles/portfolio.css">
     <link rel="stylesheet" href="./styles/feedback.css">
     <link rel="stylesheet" href="./styles/contact-me.css">
+    <link rel="stylesheet" href="./styles/dialog.css">
 </head>
 
 <body>
@@ -372,6 +373,48 @@
             </nav>
         </div>
     </footer>
+
+    <!-- Project Modal Dialog -->
+    <dialog id="project-dialog" class="project-modal">
+        <div class="dialog-content">
+            <div class="dialog-left">
+                <span class="dialog-number" id="modal-number">01</span>
+                <h2 id="modal-title">Name of the Project</h2>
+                <h3 class="dialog-subtitle">What it is about</h3>
+                <p id="modal-description">Project description...</p>
+
+                <div class="dialog-tech-container" id="modal-tech">
+
+                </div>
+
+                <div class="dialog-buttons">
+                    <a href="#" target="_blank" rel="noopener noreferrer" id="modal-github"
+                        class="modal-btn github-btn">
+                        GitHub
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" id="modal-live" class="modal-btn live-btn">
+                        Live Test
+                    </a>
+                </div>
+            </div>
+
+            <div class="dialog-right">
+                <button class="close-dialog-btn" id="close-modal" aria-label="Dialog schließen">✕</button>
+
+                <div class="dialog-image-wrapper">
+                    <img src="" alt="Projekt Screenshot" id="modal-image">
+                </div>
+
+                <button class="next-project-btn" id="next-modal">
+                    Next Project
+                </button>
+            </div>
+        </div>
+    </dialog>
+
+    <script src="./scripts/db.js"></script>
+    <script src="./scripts/templates.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

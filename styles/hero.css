@@ -34,52 +34,6 @@
     order: 3;
 }
 
-.hero-container .skills-and-contact-btn {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    color: var(--color-text-white);
-    border: 1px solid var(--color-text-white);
-    border-radius: 100px;
-    padding: 12px 24px;
-    text-decoration: none;
-    overflow: hidden; 
-    white-space: nowrap;
-    transition: border-color 0.3s ease, color 0.3s ease;
-}
-
-.hero-container .skills-and-contact-btn p {
-    margin: 0;
-    padding: 0;
-    display: inline-block;
-}
-
-.hero-container .skills-and-contact-btn:hover {
-    color: var(--color-accent-green);
-    border-color: var(--color-accent-green);
-}
-
-.hero-container .skills-and-contact-btn:hover p {
-    animation: button-text-flow 3.5s linear infinite;
-}
-
-@keyframes button-text-flow {
-    0% {
-        transform: translateX(0);
-    }
-    45% {
-        transform: translateX(-150%);
-    }
-    45.001% {
-        transform: translateX(150%);
-    }
-    100% {
-        transform: translateX(0);
-    }
-}
-
 .hero-lines-container {
     position: absolute;
     top: 0;

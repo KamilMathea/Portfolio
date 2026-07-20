@@ -1,0 +1,78 @@
+#projects {
+    padding: 80px 0;
+}
+
+.portfolio-headline {
+    align-self: flex-start;
+    color: var(--color-accent-green);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+
+#projects h2 {
+    font-size: 64px;
+    font-weight: 700;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.projects-lead {
+    font-size: 18px;
+    color: var(--color-text-white);
+    margin-bottom: 48px;
+}
+
+.projects-list {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+
+.green-separator {
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-accent-green);
+}
+
+.project-dialog-btn {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 32px 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.project-dialog-btn:hover {
+    background-color: var(--color-accent-green-transparent);
+}
+
+.project-dialog-btn h3 {
+    font-size: 24px;
+}
+
+.project-dialog-btn p {
+    font-size: 18px;
+    color: var(--color-text-white);
+    opacity: 0.8;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.project-dialog-btn p span {
+    color: var(--color-text-white);
+}
+
+.project-dialog-btn p span:not(:last-child)::after {
+    content: "|";
+    color: var(--color-accent-green) !important;
+    margin-left: 12px;
+    display: inline-block;
+}

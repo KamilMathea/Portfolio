@@ -26,7 +26,6 @@
 
 .about-headline {
     align-self: flex-start;
-    color: var(--color-accent-green);
     font-weight: 700;
     text-transform: uppercase;
     font-size: 24px;

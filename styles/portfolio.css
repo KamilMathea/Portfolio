@@ -55,6 +55,39 @@
 
 .project-dialog-btn h3 {
     font-size: 24px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.project-dialog-btn h3::after {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    -webkit-mask-image: url('../assets/img/projects/arrow_outward.svg');
+    mask-image: url('../assets/img/projects/arrow_outward.svg');
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    background-color: transparent; 
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translate(-5px, 5px);
+}
+
+.project-dialog-btn:hover {
+    background-color: var(--color-accent-green-transparent);
+}
+
+.project-dialog-btn:hover h3::after {
+    opacity: 1;
+    background-color: var(--color-text-white);
+    transform: translate(0, 0);
 }
 
 .project-dialog-btn p {

@@ -24,6 +24,14 @@
     margin-bottom: 48px;
 }
 
+.projects-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 48px;
+    width: 100%;
+}
+
 .projects-list {
     width: 60%;
     display: flex;
@@ -108,4 +116,32 @@
     color: var(--color-accent-green) !important;
     margin-left: 12px;
     display: inline-block;
+}
+
+.project-preview-wrapper {
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.project-preview-wrapper img {
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+    border-radius: 30px;
+    object-fit: cover;
+    transition: opacity 0.3s ease, transform 0.3s ease; 
+}
+
+.preview-hidden {
+    opacity: 0;
+    transform: scale(0.95);
+    pointer-events: none;
+}
+
+.preview-visible {
+    opacity: 1;
+    transform: scale(1);
 }

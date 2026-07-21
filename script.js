@@ -60,6 +60,40 @@ function showNextProject() {
 }
 
 /**
+ * Aufgabe: Zeigt das entsprechende Vorschaubild beim Hovern an.
+ */
+function showHoverPreview(index) {
+    const previewImg = document.getElementById('project-preview-img');
+    const project = projectsData[index];
+
+    if (project && project.image) {
+        previewImg.src = project.image;
+        previewImg.alt = `preview for ${project.title}`;
+        previewImg.classList.remove('preview-hidden');
+        previewImg.classList.add('preview-visible');
+    }
+}
+
+/**
+ * Aufgabe: Versteckt das Vorschaubild, wenn das Hovern endet.
+ */
+function hideHoverPreview() {
+    const previewImg = document.getElementById('project-preview-img');
+    previewImg.classList.remove('preview-visible');
+    previewImg.classList.add('preview-hidden');
+}
+
+/**
+ * Aufgabe: Richtet alle Hover-Ereignisse für die Vorschau-Bilder ein.
+ */
+function initHoverPreview() {
+    projectButtons.forEach((btn, index) => {
+        btn.addEventListener('mouseenter', () => showHoverPreview(index));
+        btn.addEventListener('mouseleave', hideHoverPreview);
+    });
+}
+
+/**
  * Aufgabe: Richtet alle Klick-Ereignisse (Event Listener) ein.
  */
 function initProjectModal() {
@@ -82,4 +116,12 @@ function initProjectModal() {
     nextBtn.addEventListener('click', showNextProject);
 }
 
-initProjectModal();
+/**
+ * Haupt-Startpunkt der Anwendung.
+ */
+function init() {
+    initProjectModal();
+    initHoverPreview();
+}
+
+init();

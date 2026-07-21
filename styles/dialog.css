@@ -103,11 +103,12 @@
     mask-image: url('../assets/img/projects/arrow_outward_green.svg');
     mask-size: contain;
     mask-repeat: no-repeat;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .modal-btn:hover::after {
     background-color: var(--color-accent-green);
+    transform: translate(3px, -3px);
 }
 
 .dialog-right {
@@ -176,9 +177,10 @@
     mask-image: url('../assets/img/projects/arrow_forward_green.svg');
     mask-size: contain;
     mask-repeat: no-repeat;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .next-project-btn:hover::after {
     background-color: var(--color-accent-green);
-    transform: scale(1.2);
+    transform: translateX(4px) scale(1.2);
 }

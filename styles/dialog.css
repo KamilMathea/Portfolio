@@ -29,28 +29,25 @@
 }
 
 .dialog-number {
-    font-size: 32px;
+    font-size: 128px;
     font-weight: 700;
     color: var(--color-accent-green);
-    font-family: 'Fira Code', monospace;
 }
 
 .dialog-left h2 {
-    font-size: 40px;
+    font-size: 64px;
     color: var(--color-text-white);
-    margin: 8px 0 4px 0;
 }
 
 .dialog-subtitle {
-    font-size: 20px;
+    font-size: 24px;
     color: var(--color-accent-green);
-    margin-bottom: 16px;
+    margin: 16px 0;
 }
 
 .dialog-left p {
-    font-size: 16px;
-    line-height: 1.6;
-    color: var(--color-text-white);
+    font-size: 18px;
+    line-height: 1.3;
     opacity: 0.9;
     margin-bottom: 24px;
 }
@@ -88,7 +85,7 @@
     color: var(--color-text-white);
     padding: 12px 24px;
     border-radius: 100px;
-    font-size: 16px;
+    font-size: 18px;
     transition: all 0.3s ease;
 }
 
@@ -100,10 +97,10 @@
 .modal-btn::after {
     content: "";
     display: inline-block;
-    width: 14px;
-    height: 14px;
-    background-color: var(--color-text-white);
-    mask-image: url('../assets/img/projects/arrow_outward.svg');
+    width: 12px;
+    height: 12px;
+    background-color: var(--color-accent-green);
+    mask-image: url('../assets/img/projects/arrow_outward_green.svg');
     mask-size: contain;
     mask-repeat: no-repeat;
     transition: background-color 0.3s ease;
@@ -136,6 +133,7 @@
 
 .close-dialog-btn:hover {
     color: var(--color-accent-green);
+    transform: scale(1.3);
 }
 
 .dialog-image-wrapper {
@@ -155,7 +153,7 @@
     align-self: flex-end;
     background: none;
     border: none;
-    color: var(--color-text-white);
+    color: var(--color-accent-green);
     font-size: 18px;
     cursor: pointer;
     display: flex;
@@ -166,7 +164,7 @@
 }
 
 .next-project-btn:hover {
-    color: var(--color-accent-green);
+    color: var(--color-text-white);
 }
 
 .next-project-btn::after {
@@ -174,12 +172,13 @@
     display: inline-block;
     width: 16px;
     height: 16px;
-    background-color: var(--color-text-white);
-    mask-image: url('../assets/img/others/arrow_forward.svg');
+    background-color: var(--color-accent-green);
+    mask-image: url('../assets/img/projects/arrow_forward_green.svg');
     mask-size: contain;
     mask-repeat: no-repeat;
 }
 
 .next-project-btn:hover::after {
     background-color: var(--color-accent-green);
+    transform: scale(1.2);
 }

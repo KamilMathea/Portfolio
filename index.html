@@ -107,7 +107,8 @@
     <section id="about">
         <div class="content-wrapper">
             <div class="about-avatar-wrapper">
-                <img class="about-avatar" src="./assets/img/others/placeholder_avatar.jpg" alt="A portrait photo of Kamil Mathea">
+                <img class="about-avatar" src="./assets/img/others/placeholder_avatar.jpg"
+                    alt="A portrait photo of Kamil Mathea">
             </div>
 
             <div class="about-right">
@@ -291,20 +292,30 @@
     </section>
 
     <!-- Feedback Section -->
-    <section>
+    <section id="feedback">
         <div class="content-wrapper">
             <h2>What my colleagues say about me</h2>
-            <div>
-                <p>Feedback text goes here...</p>
-                <div class="feedback-person">
-                    <div class="white-separator"></div>
-                    <p>M. Mustermann - Team Partner</p>
+
+            <!-- Der horizontale Slider-Bereich -->
+            <div class="feedback-carousel">
+                <ul class="feedback-track" id="feedback-track">
+                    <!-- Wird per JavaScript befüllt -->
+                </ul>
+            </div>
+
+            <!-- Navigation (Pfeile + Punkte) -->
+            <div class="next-and-previous-feedback">
+                <button id="prev-feedback-btn" aria-label="Previous feedback">
+                    <span class="feedback-arrow-icon arrow-left"></span>
+                </button>
+
+                <div id="dots-container" class="dots-container">
+                    <!-- Wird per JavaScript befüllt -->
                 </div>
-                <div class="next-and-previous-feedback">
-                    <button aria-label="Previous feedback"><img src="#" alt="Arrow pointing left"></button>
-                    <span aria-hidden="true">*dot* *dot* *dot*</span>
-                    <button aria-label="Next feedback"><img src="#" alt="Arrow pointing right"></button>
-                </div>
+
+                <button id="next-feedback-btn" aria-label="Next feedback">
+                    <span class="feedback-arrow-icon arrow-right"></span>
+                </button>
             </div>
         </div>
     </section>

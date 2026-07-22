@@ -28,3 +28,21 @@ const projectsData = [
         live: "https://kamilmathea.de/el-pollo-loco"
     }
 ];
+
+const feedbackData = [
+    {
+        text: "Kamil hat unser Team im Join-Projekt hervorragend strukturiert. Seine Code-Qualität und Problemlösungskompetenz haben das Projekt extrem vorangebracht.",
+        author: "M. Mustermann",
+        role: "Team Partner"
+    },
+    {
+        text: "Die Zusammenarbeit beim El Pollo Loco Spiel hat riesigen Spaß gemacht. Sehr verlässlicher Entwickler mit einem tollen Auge für Details!",
+        author: "E. Musterfrau",
+        role: "Frontend Developer"
+    },
+    {
+        text: "Sehr starke Leistung bei der Umsetzung komplexer UI-Komponenten. Kommunikation und Abstimmung verliefen absolut reibungslos.",
+        author: "A. Schmidt",
+        role: "Project Partner"
+    }
+];

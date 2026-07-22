@@ -11,3 +11,29 @@ function createTechIconTemplate(tech) {
         </div>
     `;
 }
+
+/**
+ * Aufgabe: Liefert das HTML-Template für eine Feedback-Karte in der Schleife.
+ */
+function createFeedbackCardTemplate(feedback, virtualIndex, realIndex, isActive) {
+    const activeClass = isActive ? 'active' : '';
+    return `
+        <li class="feedback-card ${activeClass}" id="feedback-card-${virtualIndex}" data-real-index="${realIndex}">
+            <p>"${feedback.text}"</p>
+            <div class="feedback-person">
+                <div class="white-separator"></div>
+                <p>${feedback.author} - ${feedback.role}</p>
+            </div>
+        </li>
+    `;
+}
+
+/**
+ * Aufgabe: Liefert das HTML-Template für einen Indikator-Punkt.
+ */
+function createFeedbackDotTemplate(realIndex, isActive) {
+    const activeClass = isActive ? 'active' : '';
+    return `
+        <span class="dot ${activeClass}" data-index="${realIndex}"></span>
+    `;
+}

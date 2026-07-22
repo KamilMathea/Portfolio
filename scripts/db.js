@@ -31,18 +31,18 @@ const projectsData = [
 
 const feedbackData = [
     {
-        text: "Kamil hat unser Team im Join-Projekt hervorragend strukturiert. Seine Code-Qualität und Problemlösungskompetenz haben das Projekt extrem vorangebracht.",
-        author: "M. Mustermann",
-        role: "Team Partner"
+        text: "Throughout the project, Kamil demonstrated strong reliability and collaborative skills. He adapts quickly to new tools, ensures transparent team communication, and regularly offers assistance where needed. To facilitate onboarding and technical alignment, he provided the team with structured video walkthroughs for complex setups and installations.",
+        author: "C. Nguyen-Wellmann",
+        role: "Join Project Partner"
     },
     {
-        text: "Die Zusammenarbeit beim El Pollo Loco Spiel hat riesigen Spaß gemacht. Sehr verlässlicher Entwickler mit einem tollen Auge für Details!",
-        author: "E. Musterfrau",
-        role: "Frontend Developer"
+        text: "Kamil stands out due to his meticulous work style, dedication, and reliability. He has contributed significantly to the project's success through active coordination within the team and by leading our team calls.",
+        author: "A. Egger",
+        role: "Join Project Partner"
     },
     {
-        text: "Sehr starke Leistung bei der Umsetzung komplexer UI-Komponenten. Kommunikation und Abstimmung verliefen absolut reibungslos.",
-        author: "A. Schmidt",
-        role: "Project Partner"
+        text: "Kamil demonstrated true team spirit and elevated the quality of our project to a new level. He implemented complex features flawlessly and was always absolutely reliable. It was a fantastic collaboration that I would gladly repeat!",
+        author: "L. Weigang",
+        role: "Join Project Partner"
     }
 ];

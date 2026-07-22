@@ -89,8 +89,8 @@
 
 .feedback-arrow-icon {
     display: inline-block;
-    width: 24px;
-    height: 24px;
+    width: 32px;
+    height: 32px;
     background-color: var(--color-text-white);
     -webkit-mask-size: contain;
     mask-size: contain;
@@ -123,13 +123,13 @@
 
 .dots-container {
     display: flex;
-    gap: 12px;
+    gap: 20px;
     align-items: center;
 }
 
 .dot {
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
     background-color: var(--color-text-white);
     transition: background-color 0.3s ease, transform 0.3s ease;

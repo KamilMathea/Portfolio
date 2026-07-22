@@ -8,20 +8,18 @@
     margin-bottom: 48px;
 }
 
-/* Der Wrapper für das horizontale Scrollen/Swipen */
 .feedback-carousel {
     width: 100%;
     overflow-x: auto;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
-    scrollbar-width: none; /* Versteckt Scrollbalken in Firefox */
+    scrollbar-width: none;
 }
 
 .feedback-carousel::-webkit-scrollbar {
-    display: none; /* Versteckt Scrollbalken in Chrome/Safari */
+    display: none;
 }
 
-/* Die Liste der Karten */
 .feedback-track {
     display: flex;
     gap: 32px;
@@ -30,9 +28,8 @@
     list-style: none;
 }
 
-/* Einzelne Karte (standardmäßig transparent-grün) */
 .feedback-card {
-    flex: 0 0 70%; /* 70% Breite, damit Nachbarkarten sichtbar sind */
+    flex: 0 0 70%;
     scroll-snap-align: center;
     border: 1px solid var(--color-accent-green);
     background-color: var(--color-accent-green-transparent);
@@ -44,7 +41,6 @@
     transition: background-color 0.3s ease;
 }
 
-/* Die aktuell aktive Karte in der Mitte */
 .feedback-card.active {
     background-color: var(--color-accent-green-less-transparent);
 }
@@ -55,7 +51,6 @@
     line-height: 1.3;
 }
 
-/* Autoren-Bereich unten in der Karte */
 .feedback-person {
     display: flex;
     align-items: center;
@@ -74,7 +69,6 @@
     white-space: nowrap;
 }
 
-/* Navigation unterhalb der Karten */
 .next-and-previous-feedback {
     display: flex;
     justify-content: center;
@@ -93,7 +87,6 @@
     padding: 8px;
 }
 
-/* Pfeil-Icons als CSS-Maske */
 .feedback-arrow-icon {
     display: inline-block;
     width: 24px;
@@ -118,7 +111,6 @@
     mask-image: url('../assets/img/others/right.svg');
 }
 
-/* Hover-Effekte für die Pfeile (Farbwechsel auf Grün + Bewegung) */
 #prev-feedback-btn:hover .arrow-left {
     background-color: var(--color-accent-green);
     transform: translateX(-4px);
@@ -129,7 +121,6 @@
     transform: translateX(4px);
 }
 
-/* Indikator-Punkte */
 .dots-container {
     display: flex;
     gap: 12px;

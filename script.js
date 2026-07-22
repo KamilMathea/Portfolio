@@ -180,12 +180,10 @@ function scrollToCenterFeedback() {
  */
 function setActiveFeedback(direction) {
     if (direction === 'next') {
-        // Erstes Element entfernen und hinten anfügen
         const first = rotatingFeedbackData.shift();
         rotatingFeedbackData.push(first);
         currentFeedbackIndex = (currentFeedbackIndex + 1) % feedbackData.length;
     } else if (direction === 'prev') {
-        // Letztes Element entfernen und vorne anfügen
         const last = rotatingFeedbackData.pop();
         rotatingFeedbackData.unshift(last);
         currentFeedbackIndex = (currentFeedbackIndex - 1 + feedbackData.length) % feedbackData.length;
@@ -203,7 +201,6 @@ function goToFeedbackByDot(targetRealIndex) {
     currentFeedbackIndex = targetRealIndex;
     const targetItem = feedbackData[targetRealIndex];
 
-    // Rotiere das Array so lange, bis targetItem an Position 1 (Mitte) steht
     while (rotatingFeedbackData[1] !== targetItem) {
         const first = rotatingFeedbackData.shift();
         rotatingFeedbackData.push(first);

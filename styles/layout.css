@@ -147,6 +147,12 @@ header button {
     }
 }
 
+.green-separator {
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-accent-green);
+}
+
 footer {
     background-color: var(--color-bg-dark);
     width: 100%;

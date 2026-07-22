@@ -1,9 +1,32 @@
+#contact .content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+/* --- Einleitung (Linke Spalte) --- */
+
 #contact .subtitle {
     color: var(--color-accent-green);
 }
 
-#contact a.btn-secondary {
+.contact-form-introduction .text-green {
     color: var(--color-accent-green);
+}
+
+/* --- Formular (Rechte Spalte) --- */
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 .form-group label,
@@ -18,10 +41,48 @@
     opacity: 1;
 }
 
+/* Input & Textarea Grund-Styling (OHNE Rahmen, da Trennlinie vorhanden) */
+.form-group input,
+.form-group textarea {
+    background: transparent;
+    border: none;
+    outline: none;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* --- Checkbox & Button --- */
+
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
 .checkbox-group input[type="checkbox"] {
     accent-color: var(--color-accent-green);
+    cursor: pointer;
+}
+
+.checkbox-group label {
+    font-size: 0.9rem;
+}
+
+.checkbox-group .text-green {
+    color: var(--color-accent-green);
 }
 
 button[type="submit"] {
+    padding: 12px 24px;
     color: var(--color-text-white);
+    background: transparent;
+    border: 1px solid;
+    border-radius: 100px;
+    cursor: pointer;
+    align-self: flex-start;
 }

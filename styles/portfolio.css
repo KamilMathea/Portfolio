@@ -38,12 +38,6 @@
     flex-direction: column;
 }
 
-.green-separator {
-    width: 100%;
-    height: 1px;
-    background-color: var(--color-accent-green);
-}
-
 .project-dialog-btn {
     width: 100%;
     display: flex;

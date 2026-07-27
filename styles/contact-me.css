@@ -30,6 +30,7 @@
     font-size: 24px;
     font-weight: 500;
     color: var(--color-accent-green);
+    padding: 12px 24px;
 }
 
 .form-group input,
@@ -40,6 +41,7 @@
     font-family: 'Fira Code', monospace;
     font-size: 18px;
     color: var(--color-accent-green);
+    padding: 12px 24px;
 }
 
 .form-group input::placeholder,
@@ -52,6 +54,15 @@
 .form-group textarea {
     resize: vertical;
     min-height: 100px;
+}
+
+.green-separator {
+    transition: background-color 0.3s ease, filter 0.3s ease;
+}
+
+.form-group:hover + .green-separator,
+.green-separator:has(+ .form-group:hover) {
+    filter: brightness(1.2);
 }
 
 .checkbox-group {

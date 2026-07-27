@@ -156,12 +156,42 @@ header button {
 footer {
     background-color: var(--color-bg-dark);
     width: 100%;
+    padding: 40px 0;
 }
 
-footer p {
-    color: var(--color-text-white);
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
 }
 
-footer div:nth-child(2) p {
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer-copyright {
+    align-self: center;
+}
+
+.footer-copyright p {
+    font-family: 'Fira Code', monospace;
+    color: var(--color-accent-green);
+    font-size: 18px;
+}
+
+.footer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer-nav a {
+    transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
     color: var(--color-accent-green);
 }

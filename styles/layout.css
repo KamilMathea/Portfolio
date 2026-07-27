@@ -172,6 +172,10 @@ footer {
     gap: 8px;
 }
 
+.footer-brand .logo {
+    margin-bottom: 24px;
+}
+
 .footer-copyright {
     align-self: center;
 }

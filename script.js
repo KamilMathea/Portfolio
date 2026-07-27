@@ -8,8 +8,7 @@ let currentFeedbackIndex = 0;
 let rotatingFeedbackData = [];
 
 /**
- * Aufgabe: Erstellt die Liste der Tech-Icons mithilfe des Templates 
- * und fügt sie in das DOM ein.
+ * Renders the tech icons list into the DOM using the template.
  */
 function renderTechIcons(techArray) {
     const techContainer = document.getElementById('modal-tech');
@@ -22,7 +21,7 @@ function renderTechIcons(techArray) {
 }
 
 /**
- * Aufgabe: Schreibt die Texte, Bilder und Links des Projekts in die HTML-Felder.
+ * Writes the project texts, images, and links into the HTML fields.
  */
 function renderModalContent(project) {
     document.getElementById('modal-number').textContent = project.number;
@@ -38,7 +37,7 @@ function renderModalContent(project) {
 }
 
 /**
- * Aufgabe: Steuert den Ablauf beim Öffnen (Daten holen, rendern, anzeigen).
+ * Controls the flow when opening the modal (fetching data, rendering, displaying).
  */
 function openProjectModal(index) {
     currentProjectIndex = index;
@@ -51,7 +50,7 @@ function openProjectModal(index) {
 }
 
 /**
- * Aufgabe: Berechnet das nächste Projekt und öffnet es.
+ * Calculates the next project and opens it.
  */
 function showNextProject() {
     let nextIndex = currentProjectIndex + 1;
@@ -62,7 +61,7 @@ function showNextProject() {
 }
 
 /**
- * Aufgabe: Zeigt das entsprechende Vorschaubild beim Hovern an.
+ * Displays the preview image on hover.
  */
 function showHoverPreview(index) {
     const previewImg = document.getElementById('project-preview-img');
@@ -77,7 +76,7 @@ function showHoverPreview(index) {
 }
 
 /**
- * Aufgabe: Versteckt das Vorschaubild, wenn das Hovern endet.
+ * Hides the preview image when hovering ends.
  */
 function hideHoverPreview() {
     const previewImg = document.getElementById('project-preview-img');
@@ -86,7 +85,7 @@ function hideHoverPreview() {
 }
 
 /**
- * Aufgabe: Richtet alle Hover-Ereignisse für die Vorschau-Bilder ein.
+ * Sets up all hover events for the preview images.
  */
 function initHoverPreview() {
     projectButtons.forEach((btn, index) => {
@@ -96,7 +95,7 @@ function initHoverPreview() {
 }
 
 /**
- * Aufgabe: Richtet alle Klick-Ereignisse (Event Listener) ein.
+ * Sets up all click events for the project modal.
  */
 function initProjectModal() {
     projectButtons.forEach((btn, index) => {
@@ -119,15 +118,14 @@ function initProjectModal() {
 }
 
 /**
- * Aufgabe: Erstellt eine Kopie des Daten-Arrays, damit das Haupt-Array unverändert bleibt.
+ * Creates a copy of the feedback data array to keep the original array unchanged.
  */
 function initRotatingData() {
     rotatingFeedbackData = [...feedbackData];
 }
 
 /**
- * Aufgabe: Rendert die rotierte Feedback-Liste. 
- * Index 0 ist Links, Index 1 ist Aktiv (Mitte), Index 2 ist Rechts.
+ * Renders the rotated feedback cards list.
  */
 function renderFeedbackCards() {
     const track = document.getElementById('feedback-track');
@@ -143,7 +141,7 @@ function renderFeedbackCards() {
 }
 
 /**
- * Aufgabe: Baut genau so viele Indikator-Punkte auf, wie es echte Feedbacks gibt.
+ * Builds indicator dots based on total feedback entries.
  */
 function renderFeedbackDots() {
     const dotsContainer = document.getElementById('dots-container');
@@ -156,7 +154,7 @@ function renderFeedbackDots() {
 }
 
 /**
- * Aufgabe: Aktualisiert die Active-Klassen der Punkte.
+ * Updates active class states on indicator dots.
  */
 function updateFeedbackDots() {
     const dots = document.querySelectorAll('.dot');
@@ -166,7 +164,7 @@ function updateFeedbackDots() {
 }
 
 /**
- * Aufgabe: Scrollt sanft auf das mittlere Element (Index 1).
+ * Scrolls smoothly to center the active feedback card.
  */
 function scrollToCenterFeedback() {
     const activeCard = document.getElementById('feedback-card-1');
@@ -176,7 +174,7 @@ function scrollToCenterFeedback() {
 }
 
 /**
- * Aufgabe: Rotiert die Daten im Array nach links oder rechts.
+ * Rotates feedback data array elements left or right.
  */
 function setActiveFeedback(direction) {
     if (direction === 'next') {
@@ -195,7 +193,7 @@ function setActiveFeedback(direction) {
 }
 
 /**
- * Aufgabe: Rotiert die Daten so lange, bis der geklickte Dot im Zentrum (Position 1) liegt.
+ * Rotates data until selected dot item is placed in the center position.
  */
 function goToFeedbackByDot(targetRealIndex) {
     currentFeedbackIndex = targetRealIndex;
@@ -212,7 +210,7 @@ function goToFeedbackByDot(targetRealIndex) {
 }
 
 /**
- * Aufgabe: Richtet die Klick-Events auf den Indikator-Punkten ein.
+ * Sets up click events for indicator dots.
  */
 function initFeedbackDotsEvents() {
     const dotsContainer = document.getElementById('dots-container');
@@ -225,7 +223,7 @@ function initFeedbackDotsEvents() {
 }
 
 /**
- * Aufgabe: Richtet die Klick-Events für die Navigations-Pfeile ein.
+ * Sets up click events for feedback navigation arrows.
  */
 function initFeedbackNavigationEvents() {
     const prevBtn = document.getElementById('prev-feedback-btn');
@@ -236,7 +234,7 @@ function initFeedbackNavigationEvents() {
 }
 
 /**
- * Aufgabe: Bündelt das Rendering und die Initialisierung der Feedback-Sektion.
+ * Bundles feedback section rendering and event initialization.
  */
 function initFeedback() {
     initRotatingData();
@@ -249,14 +247,14 @@ function initFeedback() {
 }
 
 /**
- * Prüft das E-Mail-Format.
+ * Validates email format against standard pattern.
  */
 function isValidEmail(email) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
 /**
- * Holt die angepassten Fehler-Texte je nach Feld-ID.
+ * Returns specific error message by form element ID.
  */
 function getContactErrorText(fieldId) {
     const errorMessages = {
@@ -268,7 +266,7 @@ function getContactErrorText(fieldId) {
 }
 
 /**
- * Validiert ein Input-Feld beim Verlassen (onBlur).
+ * Validates input on blur and shows error placeholder if invalid.
  */
 function validateInputOnBlur(input, isValid) {
     if (!isValid) {
@@ -281,7 +279,7 @@ function validateInputOnBlur(input, isValid) {
 }
 
 /**
- * Prüft, ob das gesamte Formular ausgefüllt und akzeptiert wurde.
+ * Checks if all contact form inputs and consent are valid.
  */
 function isFormFullyValid(nameInput, emailInput, messageInput, privacyCheckbox) {
     const isNameValid = nameInput.value.trim() !== '';
@@ -291,7 +289,17 @@ function isFormFullyValid(nameInput, emailInput, messageInput, privacyCheckbox) 
 }
 
 /**
- * Richtet die Blur-, Focus- und Input-Events für die Textfelder ein.
+ * Toggles visibility of privacy policy error message.
+ */
+function togglePrivacyError(isAccepted) {
+    const errorSpan = document.getElementById('privacy-error');
+    if (errorSpan) {
+        errorSpan.textContent = isAccepted ? '' : 'Please accept the privacy policy.';
+    }
+}
+
+/**
+ * Sets blur, focus, and input event listeners on form fields.
  */
 function setupInputEvents(input, validationFn, defaultPlaceholder, updateSubmitBtnFn) {
     input.addEventListener('blur', () => {
@@ -308,10 +316,45 @@ function setupInputEvents(input, validationFn, defaultPlaceholder, updateSubmitB
 }
 
 /**
- * Initialisiert das Kontaktformular und verknüpft alle Elemente.
+ * Handles form submit behavior, triggers input validations and checks privacy.
+ */
+function handleFormSubmit(event, elements) {
+    event.preventDefault();
+    validateInputOnBlur(elements.name, elements.name.value.trim() !== '');
+    validateInputOnBlur(elements.email, isValidEmail(elements.email.value.trim()));
+    validateInputOnBlur(elements.message, elements.message.value.trim() !== '');
+    togglePrivacyError(elements.privacy.checked);
+}
+
+/**
+ * Toggles active class on submit button based on form validity.
+ */
+function updateSubmitButtonState(submitBtn, isValid) {
+    submitBtn.classList.toggle('btn-active', isValid);
+}
+
+/**
+ * Attaches event listeners to form fields and submit handler.
+ */
+function attachFormEvents(elements, checkFormFn) {
+    setupInputEvents(elements.name, val => val !== '', elements.name.placeholder, checkFormFn);
+    setupInputEvents(elements.email, isValidEmail, elements.email.placeholder, checkFormFn);
+    setupInputEvents(elements.message, val => val !== '', elements.message.placeholder, checkFormFn);
+    
+    elements.privacy.addEventListener('change', () => {
+        togglePrivacyError(elements.privacy.checked);
+        checkFormFn();
+    });
+    
+    elements.form.addEventListener('submit', (e) => handleFormSubmit(e, elements));
+}
+
+/**
+ * Initializes contact form elements and logic.
  */
 function initContactForm() {
-    const formElements = {
+    const elements = {
+        form: document.querySelector('#contact form'),
         name: document.getElementById('name'),
         email: document.getElementById('email'),
         message: document.getElementById('message'),
@@ -319,25 +362,18 @@ function initContactForm() {
         submitBtn: document.getElementById('submit-btn')
     };
 
-    if (!formElements.submitBtn) return;
+    if (!elements.submitBtn) return;
 
     const checkForm = () => {
-        const isValid = isFormFullyValid(
-            formElements.name, formElements.email, 
-            formElements.message, formElements.privacy
-        );
-        formElements.submitBtn.disabled = !isValid;
+        const isValid = isFormFullyValid(elements.name, elements.email, elements.message, elements.privacy);
+        updateSubmitButtonState(elements.submitBtn, isValid);
     };
 
-    setupInputEvents(formElements.name, val => val !== '', formElements.name.placeholder, checkForm);
-    setupInputEvents(formElements.email, isValidEmail, formElements.email.placeholder, checkForm);
-    setupInputEvents(formElements.message, val => val !== '', formElements.message.placeholder, checkForm);
-    
-    formElements.privacy.addEventListener('change', checkForm);
+    attachFormEvents(elements, checkForm);
 }
 
 /**
- * Haupt-Startpunkt der Anwendung.
+ * Main application entry point.
  */
 function init() {
     initProjectModal();

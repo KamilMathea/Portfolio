@@ -134,34 +134,44 @@ button[type="submit"] {
     align-items: center;
     justify-content: center;
     padding: 12px 24px;
-    font-size: 1rem;
+    font-family: 'Karla', sans-serif;
+    font-size: 18px;
     border-radius: 100px;
     background: transparent;
     overflow: hidden;
     white-space: nowrap;
     align-self: flex-start;
+    cursor: pointer;
     color: var(--color-text-muted);
     border: 1px solid var(--color-text-muted);
-    cursor: not-allowed;
     transition: border-color 0.3s ease, color 0.3s ease;
 }
 
 button[type="submit"] p {
+    margin: 0;
     padding: 0;
     display: inline-block;
 }
 
-button[type="submit"]:not(:disabled) {
+button[type="submit"].btn-active {
     color: var(--color-text-white);
     border-color: var(--color-text-white);
-    cursor: pointer;
 }
 
-button[type="submit"]:not(:disabled):hover {
+button[type="submit"].btn-active:hover {
     color: var(--color-accent-green);
     border-color: var(--color-accent-green);
 }
 
-button[type="submit"]:not(:disabled):hover p {
+button[type="submit"].btn-active:hover p {
     animation: button-text-flow 3.5s linear infinite;
+}
+
+.checkbox-error-text {
+    font-family: 'Fira Code', monospace;
+    font-size: 18px;
+    color: var(--color-error);
+    margin-top: -12px;
+    min-height: 24px;
+    display: block;
 }

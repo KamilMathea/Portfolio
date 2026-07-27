@@ -331,39 +331,40 @@
                 </p>
             </div>
 
-            <form action="" method="POST">
+            <form action="" method="POST" novalidate>
                 <div class="green-separator"></div>
 
                 <div class="form-group">
                     <label for="name">What's your name?</label>
-                    <input type="text" id="name" name="name" required placeholder="Your name goes here">
+                    <input type="text" id="name" name="name" placeholder="Your name goes here">
                 </div>
 
                 <div class="green-separator"></div>
 
                 <div class="form-group">
                     <label for="email">What's your email?</label>
-                    <input type="email" id="email" name="email" required placeholder="youremail@email.com">
+                    <input type="email" id="email" name="email" placeholder="youremail@email.com">
                 </div>
 
                 <div class="green-separator"></div>
 
                 <div class="form-group">
                     <label for="message">How can I help you?</label>
-                    <textarea id="message" name="message" required
-                        placeholder="Hello Kamil, I am interested in..."></textarea>
+                    <textarea id="message" name="message" placeholder="Hello Kamil, I am interested in..."></textarea>
                 </div>
 
                 <div class="green-separator"></div>
 
                 <div class="checkbox-group">
-                    <input type="checkbox" id="privacy" name="privacy" required>
+                    <input type="checkbox" id="privacy" name="privacy">
                     <label for="privacy">I've read the <span class="text-green">privacy policy</span> and agree to the
                         processing of my data as
                         outlined.</label>
                 </div>
 
-                <button type="submit" id="submit-btn" disabled>
+                <span id="privacy-error" class="checkbox-error-text"></span>
+
+                <button type="submit" id="submit-btn">
                     <p>Say Hello ;)</p>
                 </button>
             </form>

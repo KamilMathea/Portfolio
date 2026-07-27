@@ -46,6 +46,7 @@
 }
 
 .form-group label {
+    padding: 12px 24px;
     font-family: 'Fira Code', monospace;
     font-size: 24px;
     font-weight: 500;
@@ -107,6 +108,7 @@ textarea:-webkit-autofill:focus {
 }
 
 .checkbox-group input[type="checkbox"] {
+    position: relative;
     appearance: none;
     -webkit-appearance: none;
     width: 20px;
@@ -134,8 +136,22 @@ textarea:-webkit-autofill:focus {
     transform: scale(1);
 }
 
-.checkbox-group input[type="checkbox"]:hover {
+.checkbox-group input[type="checkbox"]::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
     background-color: var(--color-accent-green-transparent);
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.2s ease;
+    pointer-events: none;
+}
+
+.checkbox-group input[type="checkbox"]:hover::after {
+    transform: translate(-50%, -50%) scale(1);
 }
 
 .checkbox-group label {
@@ -144,8 +160,17 @@ textarea:-webkit-autofill:focus {
     line-height: 1.5;
 }
 
-.checkbox-group .text-green {
+.privacy-link {
     color: var(--color-accent-green);
+    text-decoration: none;
+    transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.privacy-link:hover {
+    color: var(--color-text-white);
+    text-decoration: underline;
+    text-decoration-color: var(--color-accent-green);
+    text-underline-offset: 4px;
 }
 
 button[type="submit"] {
@@ -160,7 +185,7 @@ button[type="submit"] {
     background: transparent;
     overflow: hidden;
     white-space: nowrap;
-    align-self: flex-start;
+    align-self: center;
     cursor: pointer;
     color: var(--color-text-muted);
     border: 1px solid var(--color-text-muted);
@@ -188,8 +213,7 @@ button[type="submit"].btn-active:hover p {
 }
 
 .checkbox-error-text {
-    font-family: 'Fira Code', monospace;
-    font-size: 18px;
+    font-size: 14px;
     color: var(--color-error);
     margin-top: -12px;
     min-height: 24px;

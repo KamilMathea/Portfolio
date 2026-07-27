@@ -7,6 +7,7 @@
     --gradient-hero: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
     --color-text-muted: rgba(255, 255, 255, 0.8);
     --color-border: var(--color-accent-green);
+    --color-error: rgba(236, 123, 123, 0.8);
 }
 
 body {

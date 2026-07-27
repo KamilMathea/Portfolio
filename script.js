@@ -249,12 +249,101 @@ function initFeedback() {
 }
 
 /**
+ * Prüft das E-Mail-Format.
+ */
+function isValidEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+/**
+ * Holt die angepassten Fehler-Texte je nach Feld-ID.
+ */
+function getContactErrorText(fieldId) {
+    const errorMessages = {
+        name: "Oops! it seems your name is missing",
+        email: "Hoppla! your email is required",
+        message: "What do you need to develop?"
+    };
+    return errorMessages[fieldId] || "This field is required";
+}
+
+/**
+ * Validiert ein Input-Feld beim Verlassen (onBlur).
+ */
+function validateInputOnBlur(input, isValid) {
+    if (!isValid) {
+        input.value = '';
+        input.placeholder = getContactErrorText(input.id);
+        input.classList.add('input-error');
+    } else {
+        input.classList.remove('input-error');
+    }
+}
+
+/**
+ * Prüft, ob das gesamte Formular ausgefüllt und akzeptiert wurde.
+ */
+function isFormFullyValid(nameInput, emailInput, messageInput, privacyCheckbox) {
+    const isNameValid = nameInput.value.trim() !== '';
+    const isEmailValid = isValidEmail(emailInput.value.trim());
+    const isMessageValid = messageInput.value.trim() !== '';
+    return isNameValid && isEmailValid && isMessageValid && privacyCheckbox.checked;
+}
+
+/**
+ * Richtet die Blur-, Focus- und Input-Events für die Textfelder ein.
+ */
+function setupInputEvents(input, validationFn, defaultPlaceholder, updateSubmitBtnFn) {
+    input.addEventListener('blur', () => {
+        validateInputOnBlur(input, validationFn(input.value.trim()));
+        updateSubmitBtnFn();
+    });
+
+    input.addEventListener('focus', () => {
+        input.placeholder = defaultPlaceholder;
+        input.classList.remove('input-error');
+    });
+
+    input.addEventListener('input', updateSubmitBtnFn);
+}
+
+/**
+ * Initialisiert das Kontaktformular und verknüpft alle Elemente.
+ */
+function initContactForm() {
+    const formElements = {
+        name: document.getElementById('name'),
+        email: document.getElementById('email'),
+        message: document.getElementById('message'),
+        privacy: document.getElementById('privacy'),
+        submitBtn: document.getElementById('submit-btn')
+    };
+
+    if (!formElements.submitBtn) return;
+
+    const checkForm = () => {
+        const isValid = isFormFullyValid(
+            formElements.name, formElements.email, 
+            formElements.message, formElements.privacy
+        );
+        formElements.submitBtn.disabled = !isValid;
+    };
+
+    setupInputEvents(formElements.name, val => val !== '', formElements.name.placeholder, checkForm);
+    setupInputEvents(formElements.email, isValidEmail, formElements.email.placeholder, checkForm);
+    setupInputEvents(formElements.message, val => val !== '', formElements.message.placeholder, checkForm);
+    
+    formElements.privacy.addEventListener('change', checkForm);
+}
+
+/**
  * Haupt-Startpunkt der Anwendung.
  */
 function init() {
     initProjectModal();
     initHoverPreview();
     initFeedback();
+    initContactForm();
 }
 
 init();

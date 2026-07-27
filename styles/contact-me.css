@@ -30,18 +30,17 @@
     font-size: 24px;
     font-weight: 500;
     color: var(--color-accent-green);
-    padding: 12px 24px;
 }
 
 .form-group input,
 .form-group textarea {
+    padding: 12px 24px;
     background: transparent;
     border: none;
     outline: none;
     font-family: 'Fira Code', monospace;
     font-size: 18px;
     color: var(--color-accent-green);
-    padding: 12px 24px;
 }
 
 .form-group input::placeholder,
@@ -51,13 +50,29 @@
     opacity: 1;
 }
 
+.form-group input.input-error::placeholder,
+.form-group textarea.input-error::placeholder {
+    color: var(--color-error);
+}
+
 .form-group textarea {
     resize: vertical;
     min-height: 100px;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+    -webkit-text-fill-color: var(--color-accent-green);
+    -webkit-box-shadow: 0 0 0px 1000px var(--color-bg-dark) inset;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
 .green-separator {
-    transition: background-color 0.3s ease, filter 0.3s ease;
+    transition: filter 0.3s ease;
 }
 
 .form-group:hover + .green-separator,
@@ -114,18 +129,39 @@
 }
 
 button[type="submit"] {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     padding: 12px 24px;
-    color: var(--color-text-white);
-    background: transparent;
-    border: 1px solid var(--color-accent-green);
-    border-radius: 100px;
-    font-family: 'Fira Code', monospace;
     font-size: 1rem;
-    cursor: pointer;
+    border-radius: 100px;
+    background: transparent;
+    overflow: hidden;
+    white-space: nowrap;
     align-self: flex-start;
-    transition: background-color 0.2s ease, color 0.2s ease;
+    color: var(--color-text-muted);
+    border: 1px solid var(--color-text-muted);
+    cursor: not-allowed;
+    transition: border-color 0.3s ease, color 0.3s ease;
 }
 
-button[type="submit"]:hover {
-    background-color: var(--color-accent-green-transparent);
+button[type="submit"] p {
+    padding: 0;
+    display: inline-block;
+}
+
+button[type="submit"]:not(:disabled) {
+    color: var(--color-text-white);
+    border-color: var(--color-text-white);
+    cursor: pointer;
+}
+
+button[type="submit"]:not(:disabled):hover {
+    color: var(--color-accent-green);
+    border-color: var(--color-accent-green);
+}
+
+button[type="submit"]:not(:disabled):hover p {
+    animation: button-text-flow 3.5s linear infinite;
 }

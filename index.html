@@ -48,7 +48,11 @@
         <header>
             <nav>
                 <div class="header-container">
-                    <button aria-label="Change language">EN DE</button>
+                    <button id="lang-toggle-btn" class="lang-switch" aria-label="Change language"
+                        onclick="toggleLanguage()">
+                        <span id="lang-en" class="lang-option active">EN</span>
+                        <span id="lang-de" class="lang-option">DE</span>
+                    </button>
                     <ul>
                         <li><a href="#about">About me</a></li>
                         <li><a href="#skills">Skills</a></li>

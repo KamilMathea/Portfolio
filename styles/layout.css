@@ -39,13 +39,28 @@ header ul li a:hover {
     transition: all 0.3s ease;
 }
 
-header button {
-    color: var(--color-text-white);
-    background: none;
+.lang-switch {
+    display: inline-flex;
+    align-items: center;
+    background: transparent;
     border: 1px solid var(--color-accent-green);
     border-radius: 100px;
-    cursor: pointer;
     font-size: 16px;
+    padding: 0;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.lang-option {
+    color: var(--color-accent-green);
+    padding: 6px 12px;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+}
+
+.lang-option.active {
+    background-color: var(--color-accent-green);
+    color: var(--color-text-white);
     font-weight: 500;
 }
 
@@ -62,12 +77,12 @@ header button {
     align-items: center;
     font-size: 32px;
     font-weight: 700;
-    line-height: 0.8; 
+    line-height: 0.8;
 }
 
 .logo-monogram span {
     color: var(--color-accent-green);
-    -webkit-text-stroke: 0.5px transparent; 
+    -webkit-text-stroke: 0.5px transparent;
     transition: color 0.3s ease-in-out, -webkit-text-stroke-color 0.3s ease-in-out;
 }
 
@@ -112,7 +127,7 @@ header button {
     border-radius: 100px;
     padding: 12px 24px;
     text-decoration: none;
-    overflow: hidden; 
+    overflow: hidden;
     white-space: nowrap;
     transition: border-color 0.3s ease, color 0.3s ease;
 }
@@ -136,12 +151,15 @@ header button {
     0% {
         transform: translateX(0);
     }
+
     45% {
         transform: translateX(-150%);
     }
+
     45.001% {
         transform: translateX(150%);
     }
+
     100% {
         transform: translateX(0);
     }

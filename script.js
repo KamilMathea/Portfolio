@@ -6,6 +6,68 @@ const projectButtons = document.querySelectorAll('.project-dialog-btn');
 let currentProjectIndex = 0;
 let currentFeedbackIndex = 0;
 let rotatingFeedbackData = [];
+let currentLang = localStorage.getItem('selectedLanguage') || 'en';
+
+/**
+ * Updates text content for all elements with data-translate attributes.
+ */
+function translateTextElements() {
+    const elements = document.querySelectorAll('[data-translate]');
+    elements.forEach(element => {
+        const key = element.getAttribute('data-translate');
+        if (translations[currentLang]?.[key]) {
+            element.textContent = translations[currentLang][key];
+        }
+    });
+}
+
+/**
+ * Updates target attributes for elements with data-translate-attr.
+ */
+function translateAttributeElements() {
+    const elements = document.querySelectorAll('[data-translate-attr]');
+    elements.forEach(element => {
+        const [attr, key] = element.getAttribute('data-translate-attr').split(':');
+        if (translations[currentLang]?.[key]) {
+            element.setAttribute(attr, translations[currentLang][key]);
+        }
+    });
+}
+
+/**
+ * Updates active styling classes on EN/DE toggle spans.
+ */
+function updateLanguageButtonUI() {
+    const langEn = document.getElementById('lang-en');
+    const langDe = document.getElementById('lang-de');
+    if (langEn && langDe) {
+        langEn.classList.toggle('active', currentLang === 'en');
+        langDe.classList.toggle('active', currentLang === 'de');
+    }
+}
+
+/**
+ * Toggles language between 'en' and 'de', saves state and updates UI.
+ * Called directly via onclick="toggleLanguage()" in HTML.
+ */
+function toggleLanguage() {
+    currentLang = currentLang === 'en' ? 'de' : 'en';
+    localStorage.setItem('selectedLanguage', currentLang);
+    translateTextElements();
+    translateAttributeElements();
+    updateLanguageButtonUI();
+    renderFeedbackCards();
+    if (dialog.open) openProjectModal(currentProjectIndex);
+}
+
+/**
+ * Applies active language settings on initial page load.
+ */
+function initLanguage() {
+    translateTextElements();
+    translateAttributeElements();
+    updateLanguageButtonUI();
+}
 
 /**
  * Renders the tech icons list into the DOM using the template.
@@ -26,11 +88,11 @@ function renderTechIcons(techArray) {
 function renderModalContent(project) {
     document.getElementById('modal-number').textContent = project.number;
     document.getElementById('modal-title').textContent = project.title;
-    document.getElementById('modal-description').textContent = project.description;
+    document.getElementById('modal-description').textContent = project.description[currentLang] || project.description.en;
 
     const imgElement = document.getElementById('modal-image');
     imgElement.src = project.image;
-    imgElement.alt = `Screendesign der Anwendung ${project.title}`;
+    imgElement.alt = `Screendesign ${project.title}`;
 
     document.getElementById('modal-github').href = project.github;
     document.getElementById('modal-live').href = project.live;
@@ -136,7 +198,7 @@ function renderFeedbackCards() {
         const realIndex = feedbackData.indexOf(item);
         const isActive = i === 1;
 
-        track.innerHTML += createFeedbackCardTemplate(item, i, realIndex, isActive);
+        track.innerHTML += createFeedbackCardTemplate(item, i, realIndex, isActive, currentLang);
     }
 }
 
@@ -254,15 +316,23 @@ function isValidEmail(email) {
 }
 
 /**
- * Returns specific error message by form element ID.
+ * Returns specific error message by form element ID and active language.
  */
 function getContactErrorText(fieldId) {
     const errorMessages = {
-        name: "Oops! it seems your name is missing",
-        email: "Hoppla! your email is required",
-        message: "What do you need to develop?"
+        en: {
+            name: "Oops! it seems your name is missing",
+            email: "Hoppla! your email is required",
+            message: "What do you need to develop?"
+        },
+        de: {
+            name: "Oops! Dein Name fehlt noch",
+            email: "Hoppla! Deine E-Mail wird benötigt",
+            message: "Was kann ich für dich entwickeln?"
+        }
     };
-    return errorMessages[fieldId] || "This field is required";
+    const activeSet = errorMessages[currentLang] || errorMessages.en;
+    return activeSet[fieldId] || (currentLang === 'de' ? "Dieses Feld ist erforderlich" : "This field is required");
 }
 
 /**
@@ -294,21 +364,25 @@ function isFormFullyValid(nameInput, emailInput, messageInput, privacyCheckbox) 
 function togglePrivacyError(isAccepted) {
     const errorSpan = document.getElementById('privacy-error');
     if (errorSpan) {
-        errorSpan.textContent = isAccepted ? '' : 'Please accept the privacy policy.';
+        const errorText = currentLang === 'de' 
+            ? 'Bitte akzeptiere die Datenschutzerklärung.' 
+            : 'Please accept the privacy policy.';
+        errorSpan.textContent = isAccepted ? '' : errorText;
     }
 }
 
 /**
  * Sets blur, focus, and input event listeners on form fields.
  */
-function setupInputEvents(input, validationFn, defaultPlaceholder, updateSubmitBtnFn) {
+function setupInputEvents(input, validationFn, updateSubmitBtnFn) {
     input.addEventListener('blur', () => {
         validateInputOnBlur(input, validationFn(input.value.trim()));
         updateSubmitBtnFn();
     });
 
     input.addEventListener('focus', () => {
-        input.placeholder = defaultPlaceholder;
+        const key = `contact_placeholder_${input.id}`;
+        input.placeholder = translations[currentLang]?.[key] || input.placeholder;
         input.classList.remove('input-error');
     });
 
@@ -337,9 +411,9 @@ function updateSubmitButtonState(submitBtn, isValid) {
  * Attaches event listeners to form fields and submit handler.
  */
 function attachFormEvents(elements, checkFormFn) {
-    setupInputEvents(elements.name, val => val !== '', elements.name.placeholder, checkFormFn);
-    setupInputEvents(elements.email, isValidEmail, elements.email.placeholder, checkFormFn);
-    setupInputEvents(elements.message, val => val !== '', elements.message.placeholder, checkFormFn);
+    setupInputEvents(elements.name, val => val !== '', checkFormFn);
+    setupInputEvents(elements.email, isValidEmail, checkFormFn);
+    setupInputEvents(elements.message, val => val !== '', checkFormFn);
     
     elements.privacy.addEventListener('change', () => {
         togglePrivacyError(elements.privacy.checked);
@@ -376,6 +450,7 @@ function initContactForm() {
  * Main application entry point.
  */
 function init() {
+    initLanguage();
     initProjectModal();
     initHoverPreview();
     initFeedback();

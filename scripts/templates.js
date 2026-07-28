@@ -1,7 +1,7 @@
 /**
- * Erzeugt das HTML für ein einzelnes Technologie-Icon.
- * @param {Object} tech - Das einzelne Technologie-Objekt aus dem Array
- * @returns {string} Ein HTML-Textbaustein
+ * Creates HTML for a single technology icon.
+ * @param {Object} tech - Technology object containing name and icon path
+ * @returns {string} HTML string representing the tech item
  */
 function createTechIconTemplate(tech) {
     return `
@@ -13,23 +13,35 @@ function createTechIconTemplate(tech) {
 }
 
 /**
- * Aufgabe: Liefert das HTML-Template für eine Feedback-Karte in der Schleife.
+ * Creates HTML for a single feedback card.
+ * @param {Object} feedback - Feedback object containing text, author, and role
+ * @param {number} virtualIndex - Index used for virtual carousel positioning
+ * @param {number} realIndex - Original index of the feedback item
+ * @param {boolean} isActive - Active state flag
+ * @param {string} [lang='en'] - Selected language key ('en' or 'de')
+ * @returns {string} HTML string for the feedback list item
  */
-function createFeedbackCardTemplate(feedback, virtualIndex, realIndex, isActive) {
+function createFeedbackCardTemplate(feedback, virtualIndex, realIndex, isActive, lang = 'en') {
     const activeClass = isActive ? 'active' : '';
+    const text = feedback.text[lang] || feedback.text.en;
+    const role = feedback.role[lang] || feedback.role.en;
+
     return `
         <li class="feedback-card ${activeClass}" id="feedback-card-${virtualIndex}" data-real-index="${realIndex}">
-            <p>"${feedback.text}"</p>
+            <p>"${text}"</p>
             <div class="feedback-person">
                 <div class="white-separator"></div>
-                <p>${feedback.author} - ${feedback.role}</p>
+                <p>${feedback.author} - ${role}</p>
             </div>
         </li>
     `;
 }
 
 /**
- * Aufgabe: Liefert das HTML-Template für einen Indikator-Punkt.
+ * Creates HTML for a feedback carousel dot indicator.
+ * @param {number} realIndex - Index of the corresponding feedback item
+ * @param {boolean} isActive - Active state flag
+ * @returns {string} HTML string for the indicator dot
  */
 function createFeedbackDotTemplate(realIndex, isActive) {
     const activeClass = isActive ? 'active' : '';

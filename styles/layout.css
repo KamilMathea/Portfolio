@@ -176,7 +176,7 @@ header ul li a:hover {
 }
 
 footer {
-    background-color: var(--color-bg-dark);
+    background-color: transparent;
     width: 100%;
     padding: 40px 0;
 }

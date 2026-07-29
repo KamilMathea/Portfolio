@@ -13,6 +13,7 @@
 body {
     font-family: 'Karla', sans-serif;
     color: var(--color-text-white);
+    background-color: var(--color-bg-dark);
 }
 
 h2,

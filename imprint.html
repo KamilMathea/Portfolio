@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="./assets/img/others/favicon.svg" type="image/x-icon">
+
+    <title>Kamil Mathea - Portfolio</title>
+    <link rel="stylesheet" href="./styles/fonts.css">
+    <link rel="stylesheet" href="./styles/standard.css">
+    <link rel="stylesheet" href="./styles/variables.css">
+    <link rel="stylesheet" href="./styles/layout.css">
+</head>
+
+<body class="bg-gradient">
+    <header>
+        <nav>
+            <div class="header-container">
+                <button id="lang-toggle-btn" class="lang-switch" aria-label="Change language"
+                    onclick="toggleLanguage()">
+                    <span id="lang-en" class="lang-option active">EN</span>
+                    <span id="lang-de" class="lang-option">DE</span>
+                </button>
+                <ul>
+                    <li><a href="index.html#about" data-translate="nav_about">About me</a></li>
+                    <li><a href="index.html#skills" data-translate="nav_skills">Skills</a></li>
+                    <li><a href="index.html#projects" data-translate="nav_projects">Projects</a></li>
+                </ul>
+            </div>
+        </nav>
+        <a href="#" class="logo" aria-label="Kamil Mathea Portfolio Home">
+            <div class="logo-monogram">
+                <span class="letter-k">K</span>
+                <span class="letter-m">M</span>
+            </div>
+            <div class="logo-text">
+                <span>Kamil</span>
+                <span>Mathea</span>
+            </div>
+        </a>
+    </header>
+
+    <main class="content-wrapper">
+
+    </main>
+
+    <footer>
+        <div class="content-wrapper footer-content">
+            <div class="footer-brand">
+                <a href="#" class="logo" aria-label="Kamil Mathea Portfolio Home"
+                    data-translate-attr="aria-label:footer_logo_aria">
+                    <div class="logo-monogram">
+                        <span class="letter-k">K</span>
+                        <span class="letter-m">M</span>
+                    </div>
+                    <div class="logo-text">
+                        <span>Kamil</span>
+                        <span>Mathea</span>
+                    </div>
+                </a>
+                <p>Web Developer</p>
+                <p data-translate="footer_location">Kassel Germany</p>
+            </div>
+
+            <div class="footer-copyright">
+                <p>&copy; Kamil Mathea 2026</p>
+            </div>
+
+            <nav aria-label="Footer Links" data-translate-attr="aria-label:footer_nav_aria" class="footer-nav">
+                <a href="https://github.com/kamilmathea" target="_blank" rel="noopener">GitHub</a>
+                <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="mailto:kamilmathe@gmail.com" data-translate="footer_link_email">Email</a>
+                <a href="#" data-translate="footer_link_legal">Legal Notice</a>
+            </nav>
+        </div>
+    </footer>
+</body>
+
+</html>

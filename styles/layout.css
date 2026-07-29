@@ -5,6 +5,10 @@
     padding: 0 5%;
 }
 
+.bg-gradient {
+    background: var(--gradient-hero);
+}
+
 header {
     display: flex;
     justify-content: space-between;

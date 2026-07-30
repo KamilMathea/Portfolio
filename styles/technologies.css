@@ -21,6 +21,7 @@
     font-size: 24px;
     letter-spacing: 1px;
     text-transform: uppercase;
+    color: var(--color-accent-green);
 }
 
 
@@ -46,14 +47,14 @@
 }
 
 #skills h3 {
-    color: var(--color-accent-green);
+    color: var(--color-text-white);
     font-size: 24px;
     margin-bottom: 16px;
 }
 
-#skills h3 span {
+/* #skills h3 span {
     color: var(--color-text-white);
-}
+} */
 
 .skills-text {
     color: var(--color-text-white);

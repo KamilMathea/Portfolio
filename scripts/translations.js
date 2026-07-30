@@ -170,17 +170,17 @@ const translations = {
         nav_skills: "Skills",
         nav_projects: "Projekte",
         hero_role: "Frontend Entwickler",
-        hero_btn_work: "Meine Arbeiten",
-        hero_btn_contact: "Kontaktieren",
+        hero_btn_work: "Meine Projekte",
+        hero_btn_contact: "Kontaktiere mich",
         ticker_remote: "Bereit für Remote-Arbeit",
         ticker_role: "Frontend Entwickler",
         ticker_location: "Wohnhaft in Kassel",
-        ticker_open: "Offen für Angebote",
+        ticker_open: "Offen für neue Arbeit",
 
         // About Me Section
         about_headline: "Wer ich bin",
         about_title: "Über mich",
-        about_greeting: "Hallo, ich bin Kamil!",
+        about_greeting: "Hi, ich bin Kamil!",
         about_text_p1: "Mein Weg in die IT begann in der öffentlichen Verwaltung: Als Verantwortlicher für Digitalisierung habe ich als geschulter Prozessdesigner mit der Low-Code Digitalisierungsplattform \"civento\" gearbeitet und gemerkt, wie sehr mich das logische Bauen fasziniert. Bestärkt durch mein Umfeld absolviere ich aktuell eine zielgerichtete Fortbildung zum Softwareentwickler.",
         about_text_p2: "Ich liebe Effizienz, Automation und kluge Lösungen. Warum Dinge kompliziert machen, wenn man sie clever strukturieren kann? Neben fundiertem Webdesign begeistert mich vor allem die Logik hinter den Kulissen und das Zusammenspiel moderner Technologien. Mein Ziel ist es, Arbeitsabläufe spürbar zu erleichtern – und KI dient mir dabei als intelligentes Werkzeug, um schon heute vorausschauend und effizient zu entwickeln.",
         about_feature_location: "Wohnhaft in Kassel, Deutschland – offen für Remote-Arbeit",
@@ -194,7 +194,7 @@ const translations = {
         skills_need_highlight: "Du suchst",
         skills_need_text: " einen anderen Skill?",
         skills_text: "Kontaktiere mich gerne. Ich freue mich darauf, mein Wissen weiter auszubauen.",
-        skills_btn_talk: "Lass uns sprechen",
+        skills_btn_talk: "Kontaktiere mich",
         skills_tooltip_text: "Ich bin besonders daran interessiert zu lernen",
 
         // Projects Section
@@ -208,12 +208,12 @@ const translations = {
         feedback_next_aria: "Nächstes Feedback",
 
         // Contact Section
-        contact_headline: "Kontaktieren",
+        contact_headline: "Kontaktaufnahme",
         contact_title: "Lass uns zusammenarbeiten",
         contact_subtitle: "Hast du ein Problem zu lösen?",
         contact_text_p1: "Ich helfe dir dabei, Ideen in funktionale Webanwendungen zu verwandeln und Prozesse spürbar zu vereinfachen. Mit logischem Denken, dem Blick fürs Strukturierte und sauberem, barrierefreiem Code bringe ich echten Mehrwert in dein Team.",
         contact_text_p2: "Du suchst einen Frontend-Entwickler?",
-        contact_text_talk: "Lass uns sprechen!",
+        contact_text_talk: "Trete mit mir in Kontakt!",
         contact_label_name: "Wie ist dein Name?",
         contact_placeholder_name: "Dein Name hier",
         contact_label_email: "Wie lautet deine E-Mail?",

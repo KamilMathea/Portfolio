@@ -34,7 +34,10 @@ h3 {
     color: var(--color-text-white);
 }
 
-h2,
-span {
+h2 {
+    color: var(--color-accent-green);
+}
+
+.text-accent {
     color: var(--color-accent-green);
 }

@@ -44,7 +44,7 @@ const feedbackData = [
         author: "C. Nguyen-Wellmann",
         role: {
             en: "Join Project Partner",
-            de: "Join Projektpartnerin"
+            de: "Join Projektpartner"
         }
     },
     {
@@ -55,7 +55,7 @@ const feedbackData = [
         author: "A. Egger",
         role: {
             en: "Join Project Partner",
-            de: "Join Projektpartner"
+            de: "Join Projektpartnerin"
         }
     },
     {

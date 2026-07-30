@@ -168,18 +168,11 @@ function updateFeedbackDots() {
  * Scrolls smoothly to center the active feedback card.
  */
 function scrollToCenterFeedback() {
-    const track = document.getElementById('feedback-track');
     const activeCard = document.getElementById('feedback-card-1');
-    
-    if (track && activeCard) {
-        const cardLeft = activeCard.offsetLeft;
-        const cardWidth = activeCard.offsetWidth;
-        const trackWidth = track.offsetWidth;
-        
-        track.scrollTo({
-            left: cardLeft - (trackWidth / 2) + (cardWidth / 2),
-            behavior: 'smooth'
-        });
+    if (activeCard) {
+        const currentY = window.scrollY;
+        activeCard.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        window.scrollTo(0, currentY);
     }
 }
 

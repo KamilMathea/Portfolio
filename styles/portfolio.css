@@ -115,7 +115,7 @@
 }
 
 .project-preview-wrapper {
-    flex: 0 0 30%;
+    flex: 0 0 25%;
     display: flex;
     justify-content: center;
     align-items: center;

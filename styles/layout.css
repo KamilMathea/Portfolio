@@ -391,4 +391,13 @@ main {
         gap: 20px;
         font-size: 18px;
     }
+
+    .skills-and-contact-btn {
+        color: var(--color-accent-green);
+        border-color: var(--color-accent-green);
+    }
+
+    .skills-and-contact-btn p {
+        animation: button-text-flow 3.5s linear infinite;
+    }
 }

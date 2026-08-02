@@ -94,6 +94,7 @@ function openProjectModal(index) {
     renderModalContent(project);
     renderTechIcons(project.tech);
 
+    document.body.classList.add('no-scroll');
     dialog.showModal();
 }
 
@@ -147,10 +148,16 @@ function initProjectModal() {
         btn.addEventListener('click', () => openProjectModal(index));
     });
 
-    closeBtn.addEventListener('click', () => dialog.close());
+    closeBtn.addEventListener('click', () => {
+        document.body.classList.remove('no-scroll');
+        dialog.close();
+    });
 
     dialog.addEventListener('click', (event) => {
-        if (event.target === dialog) dialog.close();
+        if (event.target === dialog) {
+            document.body.classList.remove('no-scroll');
+            dialog.close();
+        }
     });
 
     nextBtn.addEventListener('click', showNextProject);

@@ -18,6 +18,44 @@ function onLanguageChange() {
 }
 
 /**
+ * Closes the mobile navigation menu and restores background scrolling.
+ */
+function closeMobileMenu() {
+    document.getElementById('burger-btn')?.classList.remove('is-active');
+    document.getElementById('nav-menu')?.classList.remove('nav-active');
+    document.getElementById('nav-overlay')?.classList.remove('is-active');
+    document.body.classList.remove('no-scroll');
+}
+
+/**
+ * Toggles the open/closed state of the mobile navigation menu.
+ */
+function toggleMobileMenu() {
+    const navMenu = document.getElementById('nav-menu');
+    const isOpening = !navMenu?.classList.contains('nav-active');
+
+    if (!isOpening) return closeMobileMenu();
+
+    document.getElementById('burger-btn')?.classList.add('is-active');
+    navMenu?.classList.add('nav-active');
+    document.getElementById('nav-overlay')?.classList.add('is-active');
+    document.body.classList.add('no-scroll');
+}
+
+/**
+ * Initializes the mobile navigation event listeners.
+ */
+function initBurgerMenu() {
+    const burgerBtn = document.getElementById('burger-btn');
+    const overlay = document.getElementById('nav-overlay');
+    const links = document.querySelectorAll('#nav-menu a');
+
+    burgerBtn?.addEventListener('click', toggleMobileMenu);
+    overlay?.addEventListener('click', closeMobileMenu);
+    links.forEach(link => link.addEventListener('click', closeMobileMenu));
+}
+
+/**
  * Renders the tech icons list into the DOM using the template.
  */
 function renderTechIcons(techArray) {
@@ -305,8 +343,8 @@ function isFormFullyValid(nameInput, emailInput, messageInput, privacyCheckbox) 
 function togglePrivacyError(isAccepted) {
     const errorSpan = document.getElementById('privacy-error');
     if (errorSpan) {
-        const errorText = currentLang === 'de' 
-            ? 'Bitte akzeptiere die Datenschutzerklärung.' 
+        const errorText = currentLang === 'de'
+            ? 'Bitte akzeptiere die Datenschutzerklärung.'
             : 'Please accept the privacy policy.';
         errorSpan.textContent = isAccepted ? '' : errorText;
     }
@@ -355,12 +393,12 @@ function attachFormEvents(elements, checkFormFn) {
     setupInputEvents(elements.name, val => val !== '', checkFormFn);
     setupInputEvents(elements.email, isValidEmail, checkFormFn);
     setupInputEvents(elements.message, val => val !== '', checkFormFn);
-    
+
     elements.privacy.addEventListener('change', () => {
         togglePrivacyError(elements.privacy.checked);
         checkFormFn();
     });
-    
+
     elements.form.addEventListener('submit', (e) => handleFormSubmit(e, elements));
 }
 
@@ -391,6 +429,7 @@ function initContactForm() {
  * Main application entry point for index.html.
  */
 function initMain() {
+    initBurgerMenu();
     initProjectModal();
     initHoverPreview();
     initFeedback();

@@ -82,10 +82,6 @@
     transform: translate(-5px, 5px);
 }
 
-.project-dialog-btn:hover {
-    background-color: var(--color-accent-green-transparent);
-}
-
 .project-dialog-btn:hover h3::after {
     opacity: 1;
     background-color: var(--color-text-white);
@@ -97,10 +93,10 @@
     color: var(--color-text-white);
     opacity: 0.8;
     display: flex;
-    flex-wrap: wrap; /* Erlaubt sauberes Umbrechen der Tech-Stack-Items */
-    gap: 8px 12px; /* Vertikaler und horizontaler Abstand */
+    flex-wrap: wrap;
+    gap: 8px 12px;
     align-items: center;
-    justify-content: flex-end; /* Richtet die Spans nach rechts aus */
+    justify-content: flex-end;
 }
 
 .project-dialog-btn p span {
@@ -170,4 +166,14 @@
 .preview-visible {
     opacity: 1;
     transform: scale(1);
+}
+
+@media (max-width: 1024px) {
+    .project-preview-wrapper {
+        display: none;
+    }
+
+    .projects-list {
+        flex: 1 1 100%;
+    }
 }

@@ -453,40 +453,33 @@
     <!-- Project Modal Dialog -->
     <dialog id="project-dialog" class="project-modal">
         <div class="dialog-content">
-            <div class="dialog-left">
-                <span class="dialog-number" id="modal-number">01</span>
-                <h2 id="modal-title">Name of the Project</h2>
-                <h3 class="dialog-subtitle" data-translate="modal_subtitle">What is this project about?</h3>
-                <p id="modal-description">Project description...</p>
+            <button class="close-dialog-btn" id="close-modal" aria-label="Close dialog"
+                data-translate-attr="aria-label:modal_btn_close_aria">✕</button>
 
-                <div class="dialog-tech-container" id="modal-tech">
-
-                </div>
-
-                <div class="dialog-buttons">
-                    <a href="#" target="_blank" rel="noopener noreferrer" id="modal-github"
-                        class="modal-btn github-btn">
-                        GitHub
-                    </a>
-                    <a href="#" target="_blank" rel="noopener noreferrer" id="modal-live" class="modal-btn live-btn"
-                        data-translate="modal_btn_live">
-                        Live Test
-                    </a>
-                </div>
+            <div class="dialog-image-wrapper">
+                <img src="" alt="Projekt Screenshot" id="modal-image">
             </div>
 
-            <div class="dialog-right">
-                <button class="close-dialog-btn" id="close-modal" aria-label="Close dialog"
-                    data-translate-attr="aria-label:modal_btn_close_aria">✕</button>
+            <span class="dialog-number" id="modal-number">01</span>
+            <h2 id="modal-title">Name of the Project</h2>
+            <h3 class="dialog-subtitle" data-translate="modal_subtitle">What is this project about?</h3>
+            <p id="modal-description">Project description...</p>
 
-                <div class="dialog-image-wrapper">
-                    <img src="" alt="Projekt Screenshot" id="modal-image">
-                </div>
+            <div class="dialog-tech-container" id="modal-tech"></div>
 
-                <button class="next-project-btn" id="next-modal" data-translate="modal_btn_next">
-                    Next Project
-                </button>
+            <div class="dialog-buttons">
+                <a href="#" target="_blank" rel="noopener noreferrer" id="modal-github" class="modal-btn github-btn">
+                    GitHub
+                </a>
+                <a href="#" target="_blank" rel="noopener noreferrer" id="modal-live" class="modal-btn live-btn"
+                    data-translate="modal_btn_live">
+                    Live Test
+                </a>
             </div>
+
+            <button class="next-project-btn" id="next-modal" data-translate="modal_btn_next">
+                Next Project
+            </button>
         </div>
     </dialog>
 

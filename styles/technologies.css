@@ -1,10 +1,28 @@
 #skills {
     padding: 80px 0;
-    background-image: radial-gradient(circle at 0% 50%, rgba(8, 70, 59, 0.3) 0%, #1C1C1C 100%);
-    background-size: 45% 85%; 
-    background-repeat: no-repeat;
-    background-position: left center;
     background-color: #1C1C1C;
+    position: relative;
+    overflow: hidden;
+}
+
+#skills::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -15%;
+    transform: translateY(-50%);
+    width: 35%;
+    height: 70%;
+    background-color: rgba(8, 70, 59, 0.55);
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 1;
+}
+
+#skills .content-wrapper {
+    position: relative;
+    z-index: 2;
 }
 
 .technologies-container {
@@ -168,4 +186,42 @@
 .subskill-icon figcaption {
     font-family: 'Fira Code';
     font-size: 14px;
+}
+
+@media (max-width: 1024px) {
+    #skills::before {
+        width: 20%;
+        height: 85%;
+        left: -10%;
+        filter: blur(60px);
+    }
+
+    .technologies-container {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+
+    .skills-card {
+        padding: 56px;
+    }
+
+    .technologies-images {
+        justify-content: center;
+    }
+
+    .skill-item {
+        animation: pulse-skill 3s infinite ease-in-out;
+    }
+}
+
+@keyframes pulse-skill {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
 }

@@ -216,3 +216,29 @@ button[type="submit"].btn-active:hover p {
     min-height: 24px;
     display: block;
 }
+
+@media (max-width: 1024px) {
+    #contact .content-wrapper {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+
+    #contact h2 {
+        font-size: 56px;
+    }
+
+    #contact h3 {
+        font-size: 20px;
+    }
+
+    .form-group label {
+        font-size: 20px;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+        font-size: 16px;
+    }
+}

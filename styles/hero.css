@@ -214,3 +214,21 @@
     display: inline-block;
     vertical-align: middle;
 }
+
+@media (max-width: 1024px) {
+    .hero-container h1 {
+        font-size: 80px;
+    }
+
+    .hero-container h2 {
+        font-size: 32px;
+    }
+
+    .hero-container .hero-buttons {
+        gap: 36px;
+    }
+
+    .ticker-text {
+        font-size: 24px;
+    }
+}

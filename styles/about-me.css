@@ -59,15 +59,6 @@
     gap: 16px;
 }
 
-.about-headline {
-    align-self: flex-start;
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 24px;
-    letter-spacing: 1px;
-    color: var(--color-accent-green);
-}
-
 .about-card {
     border: 2px solid var(--color-accent-green);
     background-color: var(--color-accent-green-transparent);

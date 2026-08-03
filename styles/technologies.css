@@ -33,16 +33,6 @@
     margin-top: 32px;
 }
 
-.technologies-headline {
-    align-self: flex-start;
-    font-weight: 700;
-    font-size: 24px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: var(--color-accent-green);
-}
-
-
 .skills-card {
     border: 2px solid var(--color-accent-green);
     background-color: var(--color-accent-green-transparent);

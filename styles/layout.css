@@ -218,6 +218,15 @@ body.no-scroll {
     background-color: var(--color-accent-green);
 }
 
+.section-headline {
+    align-self: flex-start;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 24px;
+    letter-spacing: 1px;
+    color: var(--color-accent-green);
+}
+
 footer {
     background-color: transparent;
     width: 100%;
@@ -344,6 +353,10 @@ main {
 }
 
 @media (max-width: 1024px) {
+    .section-headline {
+        font-size: 18px;
+    }
+
     .logo-text {
         display: none;
     }

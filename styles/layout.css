@@ -19,6 +19,14 @@ header {
     padding: 16px 5% 0;
 }
 
+header nav {
+    order: 1;
+}
+
+header .logo {
+    order: 2;
+}
+
 .header-container {
     font-family: 'Fira Code', monospace;
     display: flex;
@@ -355,6 +363,18 @@ main {
 @media (max-width: 1024px) {
     .section-headline {
         font-size: 18px;
+    }
+
+    header .logo {
+        order: 1;
+    }
+
+    .burger-menu {
+        order: 2;
+    }
+
+    header nav {
+        order: 3;
     }
 
     header .logo-text {

@@ -141,3 +141,17 @@
     background-color: var(--color-accent-green);
     transform: scale(1.3);
 }
+
+@media (max-width: 1024px) {
+    #feedback h2 {
+        font-size: 24px;
+    }
+
+    .feedback-card {
+        flex: 0 0 85%;
+    }
+
+    .feedback-card p {
+        font-size: 18px;
+    }
+}

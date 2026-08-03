@@ -159,10 +159,32 @@
     transform: rotate(180deg);
     white-space: nowrap;
     transition: color 0.3s ease;
+    display: inline-block;
+    position: relative;
+}
+
+.email-icon {
+    display: none;
+    width: 32px;
+    height: 32px;
+    transition: opacity 0.4s ease-in-out;
 }
 
 .rotated-email:hover {
     color: var(--color-accent-green);
+}
+
+.rotated-email::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 32px;
+    height: 32px;
+    background: url('../assets/img/social_media/Mail.svg') no-repeat center / contain;
+    filter: brightness(0) invert(1);
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
 }
 
 .ticker-text {
@@ -226,6 +248,29 @@
 
     .hero-container .hero-buttons {
         gap: 36px;
+    }
+
+    .rotated-email {
+        writing-mode: horizontal-tb;
+        transform: none;
+        width: 32px;
+        height: 32px;
+    }
+
+    .email-text {
+        display: none;
+    }
+
+    .email-icon {
+        display: block;
+    }
+
+    .rotated-email:hover .email-icon {
+        opacity: 0;
+    }
+
+    .rotated-email:hover::after {
+        opacity: 1;
     }
 
     .ticker-text {

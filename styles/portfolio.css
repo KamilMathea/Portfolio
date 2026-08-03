@@ -168,3 +168,21 @@
         flex: 1 1 100%;
     }
 }
+
+@media (max-width: 768px) {
+    .projects-lead {
+        margin-bottom: 32px;
+    }
+
+    .project-dialog-btn {
+        padding: 24px 16px;
+    }
+
+    .project-dialog-btn h3 {
+        font-size: 20px;
+    }
+
+    .project-dialog-btn p {
+        gap: 4px 8px;
+    }
+}

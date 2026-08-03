@@ -269,6 +269,34 @@
     }
 
     .next-project-btn {
+        margin-top: 24px;
         align-self: flex-end;
+    }
+}
+
+@media (max-width: 768px) {
+    .dialog-content {
+        padding: 24px;
+    }
+
+    .dialog-image-wrapper {
+        max-height: 300px;
+    }
+
+    .dialog-number {
+        font-size: 56px;
+        margin-top: 16px;
+    }
+
+    #modal-title {
+        font-size: 48px;
+    }
+
+    #modal-description {
+        margin-bottom: 16px;
+    }
+
+    .dialog-tech-container {
+        margin-bottom: 16px;
     }
 }

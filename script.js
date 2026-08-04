@@ -8,7 +8,7 @@ function translateTextElements() {
     elements.forEach(element => {
         const key = element.getAttribute('data-translate');
         if (translations[currentLang]?.[key]) {
-            element.textContent = translations[currentLang][key];
+            element.innerHTML = translations[currentLang][key];
         }
     });
 }

@@ -42,10 +42,7 @@
 }
 
 .skills-card h2 {
-    margin-top: 0;
-    margin-bottom: 32px;
-    font-size: 64px;
-    font-weight: 700;
+    margin: 0 0 32px 0;
 }
 
 .skills-lead {
@@ -219,11 +216,6 @@
 @media (max-width: 500px) {
     .skills-card {
         padding: 24px;
-    }
-
-    .skills-card h2 {
-        font-size: 56px;
-        margin-bottom: 24px;
     }
 
     .skills-lead,

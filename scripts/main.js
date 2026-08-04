@@ -11,6 +11,8 @@ let rotatingFeedbackData = [];
  * Called automatically by script.js when language button is clicked.
  */
 function onLanguageChange() {
+    document.documentElement.lang = currentLang;
+    
     renderFeedbackCards();
     if (dialog && dialog.open) {
         openProjectModal(currentProjectIndex);

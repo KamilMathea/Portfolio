@@ -199,7 +199,7 @@ const translations = {
 
         // Projects Section
         projects_headline: "Portfolio",
-        projects_title: "Ausgewählte Projekte",
+        projects_title: "Aus&shy;gewählte Projekte",
         projects_lead: "Entdecke hier eine Auswahl meiner Arbeiten – Interagiere mit den Projekten, um meine Skills in Aktion zu sehen.",
 
         // Feedback Section
@@ -209,7 +209,7 @@ const translations = {
 
         // Contact Section
         contact_headline: "Kontaktaufnahme",
-        contact_title: "Lass uns zusammenarbeiten",
+        contact_title: "Lass uns zusammen&shy;arbeiten",
         contact_subtitle: "Hast du ein Problem zu lösen?",
         contact_text_p1: "Ich helfe dir dabei, Ideen in funktionale Webanwendungen zu verwandeln und Prozesse spürbar zu vereinfachen. Mit logischem Denken, dem Blick fürs Strukturierte und sauberem, barrierefreiem Code bringe ich echten Mehrwert in dein Team.",
         contact_text_p2: "Du suchst einen Frontend-Entwickler?",

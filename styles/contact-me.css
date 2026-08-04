@@ -5,13 +5,6 @@
     align-items: start;
 }
 
-
-#contact h2 {
-    font-size: 64px;
-    font-weight: 700;
-    margin: 24px 0;
-}
-
 #contact h3 {
     font-size: 24px;
     margin-bottom: 16px;
@@ -212,10 +205,6 @@ button[type="submit"].btn-active:hover p {
     #contact .content-wrapper {
         grid-template-columns: 1fr;
         gap: 48px;
-    }
-
-    #contact h2 {
-        font-size: 56px;
     }
 
     #contact h3 {

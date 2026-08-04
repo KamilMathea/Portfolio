@@ -65,10 +65,7 @@
 }
 
 .about-card h2 {
-    margin-top: 0;
-    margin-bottom: 32px;
-    font-size: 64px;
-    font-weight: 700;
+    margin: 0 0 32px 0;
 }
 
 .about-lead {
@@ -141,11 +138,6 @@
 
     .about-card {
         padding: 24px;
-    }
-
-    .about-card h2 {
-        font-size: 56px;
-        margin-bottom: 24px;
     }
 
     .about-lead {

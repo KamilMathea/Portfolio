@@ -15,7 +15,7 @@ const projectsData = [
             { name: "Firebase", icon: "./assets/img/projects/Firebase_green.svg" }
         ],
         github: "https://github.com/kamilmathea/join",
-        live: "https://kamilmathea.de/join"
+        live: "https://join.kamil-mathea.de/"
     },
     {
         number: "02",
@@ -31,7 +31,7 @@ const projectsData = [
             { name: "JavaScript", icon: "./assets/img/projects/JavaScript_green.svg" }
         ],
         github: "https://github.com/kamilmathea/el-pollo-loco",
-        live: "https://kamilmathea.de/el-pollo-loco"
+        live: "https://el-pollo-loco.kamil-mathea.de/"
     }
 ];
 

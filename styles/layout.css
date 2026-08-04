@@ -1,22 +1,11 @@
-/* h2 {
-    font-size: 64px;
-    font-weight: 700;
-    margin: 24px 0;
-    -webkit-hyphens: auto;
-    hyphens: auto;
-    overflow-wrap: break-word;
-} */
 
 h2 {
     font-size: 64px;
     font-weight: 700;
     margin: 24px 0;
-    /* Schaltet die unschöne automatische Trennung für Headlines aus */
     -webkit-hyphens: manual;
     hyphens: manual;
-    /* Bricht Wörter nur im Notfall um, wenn sie sonst aus dem Screen ragen */
     overflow-wrap: break-word;
-    /* Sorgt für optisch perfekt ausbalancierte Zeilenumbrüche */
     text-wrap: balance;
 }
 

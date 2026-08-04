@@ -50,6 +50,8 @@
     font-size: 20px;
     color: var(--color-text-white);
     line-height: 1.3;
+    overflow-wrap: anywhere;
+    hyphens: auto;
 }
 
 .feedback-person {
@@ -59,15 +61,14 @@
     margin-top: 32px;
 }
 
+.feedback-person p {
+    font-size: 18px;
+}
+
 .white-separator {
     flex: 1;
     height: 1px;
     background-color: var(--color-text-white);
-}
-
-.feedback-person p {
-    font-size: 18px;
-    white-space: nowrap;
 }
 
 .next-and-previous-feedback {
@@ -153,5 +154,21 @@
 
     .feedback-card p {
         font-size: 18px;
+    }
+}
+
+@media (max-width: 600px) {
+    .feedback-card {
+        flex: 0 0 92%;
+        padding: 24px;
+    }
+
+    .feedback-person {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .feedback-person p {
+        font-size: 16px;
     }
 }

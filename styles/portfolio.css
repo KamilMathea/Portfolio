@@ -190,3 +190,13 @@
         gap: 4px 8px;
     }
 }
+
+@media (max-width: 500px) {
+    #projects h2 {
+        font-size: 56px;
+    }
+
+    .projects-lead {
+        font-size: 16px;
+    }
+}

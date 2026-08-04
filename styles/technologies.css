@@ -215,3 +215,27 @@
         transform: scale(1.1);
     }
 }
+
+@media (max-width: 500px) {
+    .skills-card {
+        padding: 24px;
+    }
+
+    .skills-card h2 {
+        font-size: 56px;
+        margin-bottom: 24px;
+    }
+
+    .skills-lead,
+    .skills-text {
+        font-size: 16px;
+    }
+
+    .technologies-images {
+        gap: 32px;
+    }
+
+    .skill-item img {
+        max-width: 24px;
+    }
+}

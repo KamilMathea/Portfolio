@@ -138,4 +138,17 @@
     .about-avatar-wrapper::before {
         transform: translate(-12px, 12px);
     }
+
+    .about-card {
+        padding: 24px;
+    }
+
+    .about-card h2 {
+        font-size: 56px;
+        margin-bottom: 24px;
+    }
+
+    .about-lead {
+        font-size: 16px;
+    }
 }

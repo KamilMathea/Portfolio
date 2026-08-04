@@ -300,3 +300,21 @@
         margin-bottom: 8px;
     }
 }
+
+@media (max-width: 500px) {
+    .hero-container h1 {
+        font-size: 60px;
+    }
+
+    .hero-container h2 {
+        font-size: 24px;
+    }
+
+    .hero-container .hero-buttons {
+        gap: 16px;
+    }
+
+    .skills-and-contact-btn {
+        padding: 8px 16px;
+    }
+}

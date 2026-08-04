@@ -223,6 +223,10 @@
         gap: 32px;
     }
 
+    .skill-item figcaption {
+        font-size: 16px;
+    }
+
     .skill-item img {
         max-width: 24px;
     }

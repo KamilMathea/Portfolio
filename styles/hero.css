@@ -95,9 +95,12 @@
 }
 
 @keyframes bounce-arrow {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(-4px);
     }
+
     50% {
         transform: translateY(4px);
     }
@@ -208,7 +211,7 @@
 .ticker-track {
     display: flex;
     width: max-content;
-    animation: scroll-ticker 15s linear infinite; 
+    animation: scroll-ticker 15s linear infinite;
 }
 
 .ticker-track span {
@@ -225,8 +228,9 @@
     0% {
         transform: translateX(0);
     }
+
     100% {
-        transform: translateX(-33.333%); 
+        transform: translateX(-33.333%);
     }
 }
 
@@ -316,6 +320,16 @@
 
     .skills-and-contact-btn {
         padding: 8px 16px;
+    }
+}
+
+@media (max-width: 370px) {
+    .hero-container .hero-buttons {
+        gap: 12px;
+    }
+
+    .skills-and-contact-btn {
+        padding: 4px 6px;
     }
 }
 

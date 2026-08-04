@@ -1,4 +1,3 @@
-/* KARLA (Für Fließtexte, Menüs und UI-Elemente???) */
 @font-face {
     font-family: 'Karla';
     src: url('../assets/fonts/Karla/static/Karla-Regular.ttf') format('truetype');
@@ -20,7 +19,6 @@
     font-style: normal;
 }
 
-/* FIRA CODE (Für Überschriften oder Code-Elemente)??? */
 @font-face {
     font-family: 'Fira Code';
     src: url('../assets/fonts/Fira_Code/static/FiraCode-Regular.ttf') format('truetype');

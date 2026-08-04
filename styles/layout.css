@@ -1,4 +1,3 @@
-
 h2 {
     font-size: 64px;
     font-weight: 700;
@@ -12,7 +11,7 @@ h2 {
 p {
     text-align: justify;
     text-justify: inter-word;
-    
+
 }
 
 .content-wrapper {
@@ -66,6 +65,21 @@ header ul li:hover {
 header ul li a:hover {
     color: var(--color-accent-green);
     transition: all 0.3s ease;
+}
+
+.back-btn {
+    display: none;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.back-btn:hover {
+    transform: translateX(-4px);
+}
+
+.back-btn-icon {
+    width: 36px;
+    height: 36px;
 }
 
 .lang-switch {
@@ -382,16 +396,13 @@ main {
         font-size: 18px;
     }
 
+    header {
+        flex-wrap: wrap;
+        row-gap: 32px;
+    }
+
     header .logo {
         order: 1;
-    }
-
-    .burger-menu {
-        order: 2;
-    }
-
-    header nav {
-        order: 3;
     }
 
     header .logo-text {
@@ -399,6 +410,7 @@ main {
     }
 
     .burger-menu {
+        order: 2;
         display: flex;
     }
 
@@ -407,7 +419,14 @@ main {
         background-color: var(--color-accent-green);
     }
 
+    .back-btn {
+        display: flex;
+        order: 3;
+        width: 100%;
+    }
+
     header nav {
+        order: 4;
         position: absolute;
         top: 60px;
         right: 5%;

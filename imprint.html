@@ -16,7 +16,24 @@
 
 <body class="bg-gradient">
     <header>
-        <nav>
+        <a href="index.html" class="logo" aria-label="Kamil Mathea Portfolio Home">
+            <div class="logo-monogram">
+                <span class="letter-k">K</span>
+                <span class="letter-m">M</span>
+            </div>
+            <div class="logo-text">
+                <span>Kamil</span>
+                <span>Mathea</span>
+            </div>
+        </a>
+
+        <button id="burger-btn" class="burger-menu" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav id="nav-menu">
             <div class="header-container">
                 <button id="lang-toggle-btn" class="lang-switch" aria-label="Change language"
                     onclick="toggleLanguage()">
@@ -30,16 +47,6 @@
                 </ul>
             </div>
         </nav>
-        <a href="index.html" class="logo" aria-label="Kamil Mathea Portfolio Home">
-            <div class="logo-monogram">
-                <span class="letter-k">K</span>
-                <span class="letter-m">M</span>
-            </div>
-            <div class="logo-text">
-                <span>Kamil</span>
-                <span>Mathea</span>
-            </div>
-        </a>
     </header>
 
     <main class="content-wrapper legal-content">
@@ -156,6 +163,7 @@
 
     <script src="./scripts/translations.js"></script>
     <script src="script.js"></script>
+    <script src="./scripts/navigation.js"></script>
 </body>
 
 </html>

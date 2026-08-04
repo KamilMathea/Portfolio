@@ -80,14 +80,36 @@ function setupInputEvents(input, validationFn, updateSubmitBtnFn) {
 }
 
 /**
- * Handles form submit behavior, triggers input validations and checks privacy.
+ * Sends contact form payload to the PHP backend.
  */
-function handleFormSubmit(event, elements) {
+async function sendContactMail(payload) {
+    const response = await fetch('send_mail.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+    });
+    return response.ok;
+}
+
+/**
+ * Handles form submit, validates input and triggers mail dispatch.
+ */
+async function handleFormSubmit(event, elements) {
     event.preventDefault();
-    validateInputOnBlur(elements.name, elements.name.value.trim() !== '');
-    validateInputOnBlur(elements.email, isValidEmail(elements.email.value.trim()));
-    validateInputOnBlur(elements.message, elements.message.value.trim() !== '');
-    togglePrivacyError(elements.privacy.checked);
+    const isValid = isFormFullyValid(elements.name, elements.email, elements.message, elements.privacy);
+    if (!isValid) {
+        validateInputOnBlur(elements.name, elements.name.value.trim() !== '');
+        validateInputOnBlur(elements.email, isValidEmail(elements.email.value.trim()));
+        validateInputOnBlur(elements.message, elements.message.value.trim() !== '');
+        togglePrivacyError(elements.privacy.checked);
+        return;
+    }
+    const isSent = await sendContactMail({
+        name: elements.name.value.trim(),
+        email: elements.email.value.trim(),
+        message: elements.message.value.trim()
+    });
+    if (isSent) elements.form.reset();
 }
 
 /**

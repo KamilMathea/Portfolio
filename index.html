@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="./styles/feedback.css">
     <link rel="stylesheet" href="./styles/contact-me.css">
     <link rel="stylesheet" href="./styles/dialog.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 
 <body>
@@ -50,7 +51,7 @@
                 <div class="white-hero-separator"></div>
             </div>
         </div>
-        <header>
+        <header data-aos="fade-up">
             <a href="index.html" class="logo" aria-label="Kamil Mathea Portfolio Home">
                 <div class="logo-monogram">
                     <span class="letter-k">K</span>
@@ -128,7 +129,7 @@
     </section>
 
     <!-- About me Section -->
-    <section id="about">
+    <section id="about" data-aos="fade-up">
         <div class="content-wrapper">
             <div class="about-avatar-wrapper">
                 <img class="about-avatar" src="./assets/img/others/Kamil.png" alt="A portrait photo of Kamil Mathea">
@@ -186,7 +187,7 @@
     </section>
 
     <!-- Technologies Section -->
-    <section id="skills">
+    <section id="skills" data-aos="fade-up">
         <div class="content-wrapper">
             <span class="section-headline" data-translate="skills_headline">Technologies</span>
 
@@ -210,7 +211,7 @@
                     </a>
                 </div>
 
-                <div class="technologies-images">
+                <div class="technologies-images" data-aos="fade-up" data-aos-delay="150">
                     <figure class="skill-item">
                         <img src="./assets/img/frontend_skills_icons/HTML.svg" alt="HTML5 Logo">
                         <figcaption>HTML</figcaption>
@@ -276,7 +277,7 @@
     </section>
 
     <!-- Project Section -->
-    <section id="projects">
+    <section id="projects"  data-aos="fade-up">
         <div class="content-wrapper">
             <span class="section-headline" data-translate="projects_headline">Portfolio</span>
             <h2 data-translate="projects_title">Featured Projects</h2>
@@ -284,7 +285,7 @@
                 Explore a selection of my work here - Interact with projects to see my skills in action.
             </p>
 
-            <div class="projects-container">
+            <div class="projects-container" data-aos="fade-up" data-aos-delay="150">
                 <div class="projects-list">
                     <div class="green-separator"></div>
 
@@ -350,7 +351,7 @@
     <!-- Contact me Section -->
     <section id="contact">
         <div class="content-wrapper">
-            <div class="contact-form-introduction">
+            <div class="contact-form-introduction" data-aos="fade-up">
                 <span class="section-headline" data-translate="contact_headline">Contact me</span>
                 <h2 data-translate="contact_title">Let's work together</h2>
                 <h3 class="subtitle" data-translate="contact_subtitle">Got a problem to solve?</h3>
@@ -368,7 +369,7 @@
                 </div>
             </div>
 
-            <form action="" method="POST" novalidate>
+            <form action="" method="POST" novalidate data-aos="fade-up" data-aos-delay="150">
                 <div class="green-separator"></div>
 
                 <div class="form-group">
@@ -484,6 +485,7 @@
         </div>
     </dialog>
 
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="./scripts/db.js"></script>
     <script src="./scripts/translations.js"></script>
     <script src="script.js"></script>

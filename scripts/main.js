@@ -1,4 +1,17 @@
 /**
+ * Initializes Animate On Scroll (AOS) library with custom settings.
+ */
+function initAOS() {
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 120
+        });
+    }
+}
+
+/**
  * Called automatically by script.js when language button is clicked.
  */
 function onLanguageChange() {
@@ -35,6 +48,7 @@ function initMain() {
     initFeedback();
     initContactForm();
     initLogoClickBehavior();
+    initAOS();
 }
 
 document.addEventListener('DOMContentLoaded', initMain);

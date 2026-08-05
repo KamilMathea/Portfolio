@@ -26,14 +26,14 @@ function getContactErrorText(fieldId) {
 }
 
 /**
- * Validates input on blur and shows error placeholder if invalid.
+ * Validates input on blur and shows error placeholder if invalid and field was touched/not empty.
  */
 function validateInputOnBlur(input, isValid) {
-    if (!isValid) {
+    if (!isValid && input.dataset.touched === 'true') {
         input.value = '';
         input.placeholder = getContactErrorText(input.id);
         input.classList.add('input-error');
-    } else {
+    } else if (isValid) {
         input.classList.remove('input-error');
     }
 }
@@ -65,18 +65,21 @@ function togglePrivacyError(isAccepted) {
  * Sets blur, focus, and input event listeners on form fields.
  */
 function setupInputEvents(input, validationFn, updateSubmitBtnFn) {
-    input.addEventListener('blur', () => {
-        validateInputOnBlur(input, validationFn(input.value.trim()));
-        updateSubmitBtnFn();
-    });
-
     input.addEventListener('focus', () => {
         const key = `contact_placeholder_${input.id}`;
         input.placeholder = translations[currentLang]?.[key] || input.placeholder;
         input.classList.remove('input-error');
     });
 
-    input.addEventListener('input', updateSubmitBtnFn);
+    input.addEventListener('blur', () => {
+        validateInputOnBlur(input, validationFn(input.value.trim()));
+        updateSubmitBtnFn();
+    });
+
+    input.addEventListener('input', () => {
+        input.dataset.touched = 'true';
+        updateSubmitBtnFn();
+    });
 }
 
 /**
@@ -119,9 +122,27 @@ function showContactFeedback(submitBtn) {
 }
 
 /**
- * Triggers validation placeholders for all form inputs.
+ * Validates input on blur and shows error placeholder if invalid and field was touched/edited.
+ */
+function validateInputOnBlur(input, isValid) {
+    if (!isValid && input.dataset.touched === 'true') {
+        input.value = '';
+        input.placeholder = getContactErrorText(input.id);
+        input.classList.add('input-error');
+    } else if (isValid) {
+        input.classList.remove('input-error');
+    }
+}
+
+/**
+ * Triggers validation placeholders for all form inputs on submit attempt.
  */
 function validateAllFields(elements) {
+    const fields = [elements.name, elements.email, elements.message];
+    for (let i = 0; i < fields.length; i++) {
+        fields[i].dataset.touched = 'true';
+    }
+
     validateInputOnBlur(elements.name, elements.name.value.trim() !== '');
     validateInputOnBlur(elements.email, isValidEmail(elements.email.value.trim()));
     validateInputOnBlur(elements.message, elements.message.value.trim() !== '');

@@ -201,20 +201,37 @@ button[type="submit"].btn-active:hover p {
     display: block;
 }
 
+.submit-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
 .contact-feedback {
-    align-self: center;
-    color: var(--color-accent-green);
-    border: 1px solid var(--color-accent-green);
-    background-color: var(--color-bg-dark);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: max-content;
+    max-width: 100%;
+    color: var(--color-bg-dark);
+    border: 1px solid var(--color-text-white);
+    background-color: var(--color-accent-green);
     padding: 8px 16px;
     border-radius: 8px;
     text-align: center;
-    transition: opacity 0.3s ease;
+    z-index: 10;
+    pointer-events: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, opacity 0.3s ease;
     opacity: 1;
 }
 
 .contact-feedback.fade-out {
     opacity: 0;
+    transform: translate(-50%, 10px);
 }
 
 @media (max-width: 1024px) {

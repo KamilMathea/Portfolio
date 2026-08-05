@@ -7,7 +7,7 @@
 .projects-container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     gap: 48px;
     width: 100%;
 }
@@ -92,6 +92,7 @@
 
 .project-preview-wrapper {
     flex: 0 0 25%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -129,6 +130,7 @@
 .project-preview-wrapper img {
     width: 100%;
     height: auto;
+    aspect-ratio: 16 / 9;
     max-width: 400px;
     border-radius: 30px;
     object-fit: cover;

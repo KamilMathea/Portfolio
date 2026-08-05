@@ -80,6 +80,15 @@ function setupInputEvents(input, validationFn, updateSubmitBtnFn) {
 }
 
 /**
+ * Toggles disabled state on submit button.
+ */
+function toggleButtonState(submitBtn, isDisabled) {
+    if (submitBtn) {
+        submitBtn.disabled = isDisabled;
+    }
+}
+
+/**
  * Sends contact form payload to the PHP backend.
  */
 async function sendContactMail(payload) {
@@ -92,9 +101,9 @@ async function sendContactMail(payload) {
 }
 
 /**
- * Displays temporary translated feedback message after form submission.
+ * Displays temporary translated feedback message and re-enables submit button.
  */
-function showContactFeedback() {
+function showContactFeedback(submitBtn) {
     const feedbackEl = document.getElementById('contact-feedback');
     if (!feedbackEl) return;
     translateTextElements();
@@ -102,8 +111,21 @@ function showContactFeedback() {
 
     setTimeout(() => {
         feedbackEl.classList.add('fade-out');
-        setTimeout(() => feedbackEl.classList.add('d-none'), 300);
+        setTimeout(() => {
+            feedbackEl.classList.add('d-none');
+            toggleButtonState(submitBtn, false);
+        }, 300);
     }, 4000);
+}
+
+/**
+ * Triggers validation placeholders for all form inputs.
+ */
+function validateAllFields(elements) {
+    validateInputOnBlur(elements.name, elements.name.value.trim() !== '');
+    validateInputOnBlur(elements.email, isValidEmail(elements.email.value.trim()));
+    validateInputOnBlur(elements.message, elements.message.value.trim() !== '');
+    togglePrivacyError(elements.privacy.checked);
 }
 
 /**
@@ -111,12 +133,10 @@ function showContactFeedback() {
  */
 async function handleFormSubmit(event, elements) {
     event.preventDefault();
-    const isValid = isFormFullyValid(elements.name, elements.email, elements.message, elements.privacy);
-    if (!isValid) {
-        validateInputOnBlur(elements.name, elements.name.value.trim() !== '');
-        validateInputOnBlur(elements.email, isValidEmail(elements.email.value.trim()));
-        validateInputOnBlur(elements.message, elements.message.value.trim() !== '');
-        togglePrivacyError(elements.privacy.checked);
+    toggleButtonState(elements.submitBtn, true);
+    if (!isFormFullyValid(elements.name, elements.email, elements.message, elements.privacy)) {
+        validateAllFields(elements);
+        toggleButtonState(elements.submitBtn, false);
         return;
     }
     const isSent = await sendContactMail({
@@ -127,7 +147,9 @@ async function handleFormSubmit(event, elements) {
     if (isSent) {
         elements.form.reset();
         updateSubmitButtonState(elements.submitBtn, false);
-        showContactFeedback();
+        showContactFeedback(elements.submitBtn);
+    } else {
+        toggleButtonState(elements.submitBtn, false);
     }
 }
 

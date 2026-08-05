@@ -92,6 +92,21 @@ async function sendContactMail(payload) {
 }
 
 /**
+ * Displays temporary translated feedback message after form submission.
+ */
+function showContactFeedback() {
+    const feedbackEl = document.getElementById('contact-feedback');
+    if (!feedbackEl) return;
+    translateTextElements();
+    feedbackEl.classList.remove('d-none', 'fade-out');
+
+    setTimeout(() => {
+        feedbackEl.classList.add('fade-out');
+        setTimeout(() => feedbackEl.classList.add('d-none'), 300);
+    }, 4000);
+}
+
+/**
  * Handles form submit, validates input and triggers mail dispatch.
  */
 async function handleFormSubmit(event, elements) {
@@ -109,7 +124,11 @@ async function handleFormSubmit(event, elements) {
         email: elements.email.value.trim(),
         message: elements.message.value.trim()
     });
-    if (isSent) elements.form.reset();
+    if (isSent) {
+        elements.form.reset();
+        updateSubmitButtonState(elements.submitBtn, false);
+        showContactFeedback();
+    }
 }
 
 /**

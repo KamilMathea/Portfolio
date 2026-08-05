@@ -107,10 +107,18 @@
     p {
         text-align: left;
     }
+
+    .legal-content h1 {
+        font-size: 56px;
+    }
 }
 
 @media (max-width: 500px) {
     h2 {
         font-size: 56px;
+    }
+
+    .legal-content h1 {
+        font-size: 40px;
     }
 }

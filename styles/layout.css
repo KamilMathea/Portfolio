@@ -18,6 +18,10 @@ p {
 
 }
 
+section:not(.hero-container) {
+    padding: 60px 0;
+}
+
 .content-wrapper {
     max-width: 1440px;
     margin: 0 auto;

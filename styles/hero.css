@@ -3,6 +3,8 @@
     flex-direction: column;
     position: relative;
     overflow: hidden;
+    min-height: 100dvh;
+    box-sizing: border-box;
 }
 
 .hero-container .content-wrapper {

@@ -64,3 +64,31 @@ function initLanguage() {
 }
 
 document.addEventListener('DOMContentLoaded', initLanguage);
+
+/**
+ * Handles logo click logic on the main page.
+ */
+function handleLogoClick(event) {
+    if (window.scrollY > 0) {
+        event.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+}
+
+/**
+ * Sets up smooth scroll-to-top for logos when clicked on the index page.
+ */
+function initLogoClickBehavior() {
+    const logos = document.querySelectorAll('.logo');
+    const path = window.location.pathname;
+    const isMainPage = path.endsWith('index.html') || path.endsWith('/') || path === '';
+
+    if (!isMainPage) return;
+
+    for (let i = 0; i < logos.length; i++) {
+        logos[i].addEventListener('click', handleLogoClick);
+    }
+}

@@ -34,6 +34,7 @@ function initMain() {
     initHoverPreview();
     initFeedback();
     initContactForm();
+    initLogoClickBehavior();
 }
 
 document.addEventListener('DOMContentLoaded', initMain);

@@ -15,3 +15,11 @@ a {
         transition: none !important;
     }
 }
+
+section[id][data-aos] {
+    transform: none !important;
+}
+
+section[id][data-aos].aos-animate {
+    transform: translate3d(0, 0, 0) !important;
+}

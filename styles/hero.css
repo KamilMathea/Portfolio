@@ -63,12 +63,12 @@
 
 .green-hero-separator {
     width: 1px;
-    height: 27dvh;
+    height: 28dvh;
 }
 
 .white-hero-separator {
     width: 1px;
-    height: 24dvh;
+    height: 26dvh;
 }
 
 .green-hero-separator {
@@ -194,8 +194,10 @@
 
 .ticker-text {
     position: absolute;
-    bottom: 48px;
-    left: -5%;
+    /* Bei 1440px Breite ist 3vw - 40px ca. 3px (nahe 0).
+       Bei 2560px Breite ist 3vw - 40px ca. 37px (plus Drehung = ~100px optisch). */
+    bottom: calc(3vw - 40px);
+    left: -5vw;
     width: 110vw;
     background: rgba(255, 255, 255, 0.12);
     backdrop-filter: blur(5.3px);
@@ -285,6 +287,7 @@
 
     .ticker-text {
         font-size: 24px;
+        bottom: 24px;
     }
 }
 
@@ -338,18 +341,26 @@
         padding: 4px 6px;
     }
 
-    .white-hero-separator {
+    .green-hero-separator {
         height: 130px;
+    }
+
+    .white-hero-separator {
+        height: 100px;
     }
 }
 
 @media (max-height: 680px) {
     .hero-container .hero-buttons {
-        margin-bottom: 120px;
+        margin-bottom: 200px;
     }
 
     .contact-social-group {
         gap: 12px;
         margin-bottom: 6px;
+    }
+
+    .white-hero-separator {
+        height: 105px;
     }
 }

@@ -26,14 +26,16 @@ function getContactErrorText(fieldId) {
 }
 
 /**
- * Validates input on blur and shows error placeholder if invalid and field was touched/not empty.
+ * Validates input on blur and shows error placeholder if invalid and field was touched.
  */
 function validateInputOnBlur(input, isValid) {
-    if (!isValid && input.dataset.touched === 'true') {
+    if (input.dataset.touched !== 'true') return;
+
+    if (!isValid) {
         input.value = '';
         input.placeholder = getContactErrorText(input.id);
         input.classList.add('input-error');
-    } else if (isValid) {
+    } else {
         input.classList.remove('input-error');
     }
 }
@@ -80,6 +82,13 @@ function setupInputEvents(input, validationFn, updateSubmitBtnFn) {
         input.dataset.touched = 'true';
         updateSubmitBtnFn();
     });
+
+    input.addEventListener('change', () => {
+        if (input.value.trim() !== '') {
+            input.dataset.touched = 'true';
+        }
+        updateSubmitBtnFn();
+    });
 }
 
 /**
@@ -122,19 +131,6 @@ function showContactFeedback(submitBtn) {
 }
 
 /**
- * Validates input on blur and shows error placeholder if invalid and field was touched/edited.
- */
-function validateInputOnBlur(input, isValid) {
-    if (!isValid && input.dataset.touched === 'true') {
-        input.value = '';
-        input.placeholder = getContactErrorText(input.id);
-        input.classList.add('input-error');
-    } else if (isValid) {
-        input.classList.remove('input-error');
-    }
-}
-
-/**
  * Triggers validation placeholders for all form inputs on submit attempt.
  */
 function validateAllFields(elements) {
@@ -155,18 +151,25 @@ function validateAllFields(elements) {
 async function handleFormSubmit(event, elements) {
     event.preventDefault();
     toggleButtonState(elements.submitBtn, true);
+
     if (!isFormFullyValid(elements.name, elements.email, elements.message, elements.privacy)) {
         validateAllFields(elements);
         toggleButtonState(elements.submitBtn, false);
         return;
     }
+
     const isSent = await sendContactMail({
         name: elements.name.value.trim(),
         email: elements.email.value.trim(),
         message: elements.message.value.trim()
     });
+
     if (isSent) {
         elements.form.reset();
+        // Setzt den Interaktionsstatus zurück
+        [elements.name, elements.email, elements.message].forEach(input => {
+            delete input.dataset.touched;
+        });
         updateSubmitButtonState(elements.submitBtn, false);
         showContactFeedback(elements.submitBtn);
     } else {

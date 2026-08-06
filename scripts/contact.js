@@ -32,11 +32,13 @@ function validateInputOnBlur(input, isValid) {
     if (input.dataset.touched !== 'true') return;
 
     if (!isValid) {
+        input.dataset.userValue = input.value;
         input.value = '';
         input.placeholder = getContactErrorText(input.id);
         input.classList.add('input-error');
     } else {
         input.classList.remove('input-error');
+        delete input.dataset.userValue;
     }
 }
 
@@ -71,6 +73,11 @@ function setupInputEvents(input, validationFn, updateSubmitBtnFn) {
         const key = `contact_placeholder_${input.id}`;
         input.placeholder = translations[currentLang]?.[key] || input.placeholder;
         input.classList.remove('input-error');
+
+        if (input.dataset.userValue !== undefined) {
+            input.value = input.dataset.userValue;
+            delete input.dataset.userValue;
+        }
     });
 
     input.addEventListener('blur', () => {
